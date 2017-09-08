@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */; };
 		D9DB53E91F6241C20009CD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53E81F6241C20009CD6C /* main.m */; };
 		D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EB1F6241C20009CD6C /* AppDelegate.m */; };
 		D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EE1F6241C20009CD6C /* ViewController.m */; };
 		D9DB53F21F6241C20009CD6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F01F6241C20009CD6C /* Main.storyboard */; };
 		D9DB53F41F6241C20009CD6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F31F6241C20009CD6C /* Assets.xcassets */; };
 		D9DB53F71F6241C20009CD6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */; };
+		D9DB54011F6242320009CD6C /* CQCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB54001F6242320009CD6C /* CQCountDownButton.m */; };
+		D9DB54041F628A480009CD6C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB54031F628A480009CD6C /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CQCountDownButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.release.xcconfig"; sourceTree = "<group>"; };
 		D9DB53E41F6241C20009CD6C /* CQCountDownButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQCountDownButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DB53E81F6241C20009CD6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D9DB53EA1F6241C20009CD6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +31,11 @@
 		D9DB53F31F6241C20009CD6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9DB53F61F6241C20009CD6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9DB53F81F6241C20009CD6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCountDownButton.h; sourceTree = "<group>"; };
+		D9DB54001F6242320009CD6C /* CQCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCountDownButton.m; sourceTree = "<group>"; };
+		D9DB54021F628A480009CD6C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D9DB54031F628A480009CD6C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00EE2569099C403A7B8579A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */,
+				97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68FF1FA3CBCF3FCBA720BA10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9DB53DB1F6241C20009CD6C = {
 			isa = PBXGroup;
 			children = (
 				D9DB53E61F6241C20009CD6C /* CQCountDownButton */,
 				D9DB53E51F6241C20009CD6C /* Products */,
+				00EE2569099C403A7B8579A9 /* Pods */,
+				68FF1FA3CBCF3FCBA720BA10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +88,13 @@
 		D9DB53E61F6241C20009CD6C /* CQCountDownButton */ = {
 			isa = PBXGroup;
 			children = (
+				D9DB53FE1F6242120009CD6C /* CQCountDownButton */,
 				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
 				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
 				D9DB53ED1F6241C20009CD6C /* ViewController.h */,
 				D9DB53EE1F6241C20009CD6C /* ViewController.m */,
+				D9DB54021F628A480009CD6C /* SecondViewController.h */,
+				D9DB54031F628A480009CD6C /* SecondViewController.m */,
 				D9DB53F01F6241C20009CD6C /* Main.storyboard */,
 				D9DB53F31F6241C20009CD6C /* Assets.xcassets */,
 				D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */,
@@ -79,6 +112,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9DB53FE1F6242120009CD6C /* CQCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */,
+				D9DB54001F6242320009CD6C /* CQCountDownButton.m */,
+			);
+			path = CQCountDownButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9DB53FB1F6241C20009CD6C /* Build configuration list for PBXNativeTarget "CQCountDownButton" */;
 			buildPhases = (
+				FC39F6D21F9F70B94D34BA4C /* [CP] Check Pods Manifest.lock */,
 				D9DB53E01F6241C20009CD6C /* Sources */,
 				D9DB53E11F6241C20009CD6C /* Frameworks */,
 				D9DB53E21F6241C20009CD6C /* Resources */,
+				CCEA0B1C2E3DFF19CE7277E6 /* [CP] Embed Pods Frameworks */,
+				4DCC95B941987B39BF24719F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,14 +191,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DCC95B941987B39BF24719F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCEA0B1C2E3DFF19CE7277E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC39F6D21F9F70B94D34BA4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9DB53E01F6241C20009CD6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DB54041F628A480009CD6C /* SecondViewController.m in Sources */,
 				D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */,
 				D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */,
 				D9DB53E91F6241C20009CD6C /* main.m in Sources */,
+				D9DB54011F6242320009CD6C /* CQCountDownButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +366,13 @@
 		};
 		D9DB53FC1F6241C20009CD6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4J5JWPJ294;
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,10 +381,13 @@
 		};
 		D9DB53FD1F6241C20009CD6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4J5JWPJ294;
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +413,7 @@
 				D9DB53FD1F6241C20009CD6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

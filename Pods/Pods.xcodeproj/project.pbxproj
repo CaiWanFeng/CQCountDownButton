@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22F84026C90B2547776FEE4FBBEF09EB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBDD46D37F20A55A776E4B7E0AB44FC /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295BBFB86917DAF1159CE282E5ABCDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		457C99737643272E4840B953D50E1A85 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EE32E605C2935C406DE5E211B455E0 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54F6B6C12022242F312E9E415788085E /* MSWeakTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3B6070F56FE7A4EBC05E55CA50E01 /* MSWeakTimer-dummy.m */; };
+		57793B0D6152073EA0CAB195C07CB87A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		5F66B323D9DF49E2851EF0056C001FBB /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6E6BD447E1AE83E73E407C928CF80 /* SVProgressAnimatedView.m */; };
+		7F0627590D66F43DAF185BE98F2BCACD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		849A4D1087967C3E064DA47C9DC79899 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B6FFBCAE7CBBA5CDA120820E9AA0BDB6 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A86B69ABD9024E5B26132DB2B2EFAFA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2035E7E78516A48DCE5F90514C02A26D /* SVRadialGradientLayer.m */; };
+		A2A9E0C26E0E87EFE11249D23D8FB4DB /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 996339128DA5B0E7D53B9CFBCAC17130 /* MSWeakTimer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C21F13B2C2C6B88EE69E35854AB9A12D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF23FCE4533352922972F8B80046DFA /* SVProgressHUD.m */; };
+		C4113884BE6ED82C519B0E9A8EE036EB /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E1B5A0FDEA8C74FC5D64DA4E2247D1 /* SVIndefiniteAnimatedView.m */; };
+		CD39E8579ECDB1CF635C5174D295B582 /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E387F777B5A1D901CA776D1CDE77B89 /* MSWeakTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D761601D4AC151E5C1BDA7490B3D2136 /* Pods-CQCountDownButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B384330F57CFB069E0FD300B751D4FA /* Pods-CQCountDownButton-dummy.m */; };
+		D90F199A9B0CE193D1DAADB3F871C844 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B3E085D1FCF400CE2F04504047028A /* SVProgressHUD-dummy.m */; };
+		E797D2715B300B683C06F48DAED72AC8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		F33E56419A07B09B9EB2149EF02C9681 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B03BBD1C9F589DFD3E66DC2092DE26 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83F9799672EAA9BC1B651882DC695A8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 670B4FAD7B7EE21D5BFAAD40B76CE925;
+			remoteInfo = SVProgressHUD;
+		};
+		EAA385307B2A8127C346B5752850F1C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03166DD62238C599BC28CAB59C0E0557;
+			remoteInfo = MSWeakTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07B03BBD1C9F589DFD3E66DC2092DE26 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		2035E7E78516A48DCE5F90514C02A26D /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		30EE32E605C2935C406DE5E211B455E0 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		322AD7C380B7D1647A38080B19A0A7EF /* Pods-CQCountDownButton-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CQCountDownButton-frameworks.sh"; sourceTree = "<group>"; };
+		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4368A3AEBB384618F6ABC337A38B4106 /* libPods-CQCountDownButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CQCountDownButton.a"; path = "libPods-CQCountDownButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E387F777B5A1D901CA776D1CDE77B89 /* MSWeakTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		4FE6E6BD447E1AE83E73E407C928CF80 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		570E7D0E88173CB3015850543267B2EF /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		58EEB14DF9A09229AD6DCB38290CB04D /* Pods-CQCountDownButton-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CQCountDownButton-acknowledgements.plist"; sourceTree = "<group>"; };
+		59B3E085D1FCF400CE2F04504047028A /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		5A2FCFD364D434F59568DCB56EC825EA /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		5B384330F57CFB069E0FD300B751D4FA /* Pods-CQCountDownButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CQCountDownButton-dummy.m"; sourceTree = "<group>"; };
+		5CC3CB63EB18B6331BEEFF458A403200 /* libMSWeakTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMSWeakTimer.a; path = libMSWeakTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D309D35B66FB668E063AE0ADCE251CD /* Pods-CQCountDownButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CQCountDownButton.release.xcconfig"; sourceTree = "<group>"; };
+		7614E92BDC5F9061BF4CF4290175BB8D /* MSWeakTimer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSWeakTimer.xcconfig; sourceTree = "<group>"; };
+		828A9EE2679309D3637399696C07EE1F /* MSWeakTimer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSWeakTimer-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		984198990DC62FB418882AFDB471F23B /* Pods-CQCountDownButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CQCountDownButton.debug.xcconfig"; sourceTree = "<group>"; };
+		996339128DA5B0E7D53B9CFBCAC17130 /* MSWeakTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
+		997E556BBB8236A19BEA0B81C7527D5E /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSVProgressHUD.a; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD614C71317A480F0A0E030E6FDB2694 /* Pods-CQCountDownButton-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CQCountDownButton-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B6FFBCAE7CBBA5CDA120820E9AA0BDB6 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		DAAEC82BCA66ED9D1993BAED8B43A7B7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E2BFF08793EBBE4C44A8E6E7CD62CE8C /* Pods-CQCountDownButton-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CQCountDownButton-resources.sh"; sourceTree = "<group>"; };
+		E4E1B5A0FDEA8C74FC5D64DA4E2247D1 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		E7C3B6070F56FE7A4EBC05E55CA50E01 /* MSWeakTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSWeakTimer-dummy.m"; sourceTree = "<group>"; };
+		EDBDD46D37F20A55A776E4B7E0AB44FC /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		FAF23FCE4533352922972F8B80046DFA /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A5F8E04846198D6FE6A3762E1C9A7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295BBFB86917DAF1159CE282E5ABCDEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A2BCC81E8C8A9FAD6761BAF8CC061B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F0627590D66F43DAF185BE98F2BCACD /* Foundation.framework in Frameworks */,
+				E797D2715B300B683C06F48DAED72AC8 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8D92BC6B6CDB812D103A1E5D17999AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57793B0D6152073EA0CAB195C07CB87A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09C2660E222257D5414C0CABF86E4824 /* MSWeakTimer */ = {
+			isa = PBXGroup;
+			children = (
+				4E387F777B5A1D901CA776D1CDE77B89 /* MSWeakTimer.h */,
+				996339128DA5B0E7D53B9CFBCAC17130 /* MSWeakTimer.m */,
+				8D3247E6E40277FF501922AA472D535B /* Support Files */,
+			);
+			name = MSWeakTimer;
+			path = MSWeakTimer;
+			sourceTree = "<group>";
+		};
+		0BA47BDD9CCAE4BB4020DC680BC5B6C8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4465C99C545DCB997CB1E4A5CA176012 /* Pods-CQCountDownButton */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		39B6CC69ECC3661F30D904F21D6CCF06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAAEC82BCA66ED9D1993BAED8B43A7B7 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7AB6F27FF3606F9360547F8F1977A63 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4465C99C545DCB997CB1E4A5CA176012 /* Pods-CQCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				AD614C71317A480F0A0E030E6FDB2694 /* Pods-CQCountDownButton-acknowledgements.markdown */,
+				58EEB14DF9A09229AD6DCB38290CB04D /* Pods-CQCountDownButton-acknowledgements.plist */,
+				5B384330F57CFB069E0FD300B751D4FA /* Pods-CQCountDownButton-dummy.m */,
+				322AD7C380B7D1647A38080B19A0A7EF /* Pods-CQCountDownButton-frameworks.sh */,
+				E2BFF08793EBBE4C44A8E6E7CD62CE8C /* Pods-CQCountDownButton-resources.sh */,
+				984198990DC62FB418882AFDB471F23B /* Pods-CQCountDownButton.debug.xcconfig */,
+				6D309D35B66FB668E063AE0ADCE251CD /* Pods-CQCountDownButton.release.xcconfig */,
+			);
+			name = "Pods-CQCountDownButton";
+			path = "Target Support Files/Pods-CQCountDownButton";
+			sourceTree = "<group>";
+		};
+		56D2D4416154AC6AA5335B0CA9ED3FFF /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EDBDD46D37F20A55A776E4B7E0AB44FC /* SVIndefiniteAnimatedView.h */,
+				E4E1B5A0FDEA8C74FC5D64DA4E2247D1 /* SVIndefiniteAnimatedView.m */,
+				07B03BBD1C9F589DFD3E66DC2092DE26 /* SVProgressAnimatedView.h */,
+				4FE6E6BD447E1AE83E73E407C928CF80 /* SVProgressAnimatedView.m */,
+				30EE32E605C2935C406DE5E211B455E0 /* SVProgressHUD.h */,
+				FAF23FCE4533352922972F8B80046DFA /* SVProgressHUD.m */,
+				B6FFBCAE7CBBA5CDA120820E9AA0BDB6 /* SVRadialGradientLayer.h */,
+				2035E7E78516A48DCE5F90514C02A26D /* SVRadialGradientLayer.m */,
+				39B6CC69ECC3661F30D904F21D6CCF06 /* Resources */,
+				CCCCD48C45542612962D3DABFA1608B8 /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				EC41597E4CF6AE3AF886F93C7D9E95B5 /* Pods */,
+				97CA10C3F62076241EAE838FB03B3F61 /* Products */,
+				0BA47BDD9CCAE4BB4020DC680BC5B6C8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8D3247E6E40277FF501922AA472D535B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7614E92BDC5F9061BF4CF4290175BB8D /* MSWeakTimer.xcconfig */,
+				E7C3B6070F56FE7A4EBC05E55CA50E01 /* MSWeakTimer-dummy.m */,
+				828A9EE2679309D3637399696C07EE1F /* MSWeakTimer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MSWeakTimer";
+			sourceTree = "<group>";
+		};
+		97CA10C3F62076241EAE838FB03B3F61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CC3CB63EB18B6331BEEFF458A403200 /* libMSWeakTimer.a */,
+				4368A3AEBB384618F6ABC337A38B4106 /* libPods-CQCountDownButton.a */,
+				997E556BBB8236A19BEA0B81C7527D5E /* libSVProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */,
+				BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CCCCD48C45542612962D3DABFA1608B8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				570E7D0E88173CB3015850543267B2EF /* SVProgressHUD.xcconfig */,
+				59B3E085D1FCF400CE2F04504047028A /* SVProgressHUD-dummy.m */,
+				5A2FCFD364D434F59568DCB56EC825EA /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		EC41597E4CF6AE3AF886F93C7D9E95B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09C2660E222257D5414C0CABF86E4824 /* MSWeakTimer */,
+				56D2D4416154AC6AA5335B0CA9ED3FFF /* SVProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7307B4989B8BEC901D45D00715683F73 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F84026C90B2547776FEE4FBBEF09EB /* SVIndefiniteAnimatedView.h in Headers */,
+				F33E56419A07B09B9EB2149EF02C9681 /* SVProgressAnimatedView.h in Headers */,
+				457C99737643272E4840B953D50E1A85 /* SVProgressHUD.h in Headers */,
+				849A4D1087967C3E064DA47C9DC79899 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71B4BD93400C0398383161DB236B611 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD39E8579ECDB1CF635C5174D295B582 /* MSWeakTimer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		03166DD62238C599BC28CAB59C0E0557 /* MSWeakTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C86299C3B766E2AA9615377A047E6BBC /* Build configuration list for PBXNativeTarget "MSWeakTimer" */;
+			buildPhases = (
+				14A4C15718909822AEDD81CA78EDC20D /* Sources */,
+				F8D92BC6B6CDB812D103A1E5D17999AB /* Frameworks */,
+				A71B4BD93400C0398383161DB236B611 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSWeakTimer;
+			productName = MSWeakTimer;
+			productReference = 5CC3CB63EB18B6331BEEFF458A403200 /* libMSWeakTimer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		670B4FAD7B7EE21D5BFAAD40B76CE925 /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDE16D2F4CE39E3A5791A32B8028D9E9 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				49D216C74009FE9A0603D6402185BD6B /* Sources */,
+				D0A2BCC81E8C8A9FAD6761BAF8CC061B /* Frameworks */,
+				7307B4989B8BEC901D45D00715683F73 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 997E556BBB8236A19BEA0B81C7527D5E /* libSVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8315B468E59AD94E8068924E6E0A0272 /* Pods-CQCountDownButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADD3273A58B5B25072CE4BE9C8AC90E /* Build configuration list for PBXNativeTarget "Pods-CQCountDownButton" */;
+			buildPhases = (
+				53184A8910CD996530545F3147BDDD95 /* Sources */,
+				7A5F8E04846198D6FE6A3762E1C9A7C2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C885D95DFF8153047FCF50E1CA07434C /* PBXTargetDependency */,
+				2DDD76B4417E55DABECB329B140F4AB6 /* PBXTargetDependency */,
+			);
+			name = "Pods-CQCountDownButton";
+			productName = "Pods-CQCountDownButton";
+			productReference = 4368A3AEBB384618F6ABC337A38B4106 /* libPods-CQCountDownButton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 97CA10C3F62076241EAE838FB03B3F61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03166DD62238C599BC28CAB59C0E0557 /* MSWeakTimer */,
+				8315B468E59AD94E8068924E6E0A0272 /* Pods-CQCountDownButton */,
+				670B4FAD7B7EE21D5BFAAD40B76CE925 /* SVProgressHUD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14A4C15718909822AEDD81CA78EDC20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F6B6C12022242F312E9E415788085E /* MSWeakTimer-dummy.m in Sources */,
+				A2A9E0C26E0E87EFE11249D23D8FB4DB /* MSWeakTimer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D216C74009FE9A0603D6402185BD6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4113884BE6ED82C519B0E9A8EE036EB /* SVIndefiniteAnimatedView.m in Sources */,
+				5F66B323D9DF49E2851EF0056C001FBB /* SVProgressAnimatedView.m in Sources */,
+				D90F199A9B0CE193D1DAADB3F871C844 /* SVProgressHUD-dummy.m in Sources */,
+				C21F13B2C2C6B88EE69E35854AB9A12D /* SVProgressHUD.m in Sources */,
+				9A86B69ABD9024E5B26132DB2B2EFAFA /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53184A8910CD996530545F3147BDDD95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D761601D4AC151E5C1BDA7490B3D2136 /* Pods-CQCountDownButton-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DDD76B4417E55DABECB329B140F4AB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 670B4FAD7B7EE21D5BFAAD40B76CE925 /* SVProgressHUD */;
+			targetProxy = 83F9799672EAA9BC1B651882DC695A8A /* PBXContainerItemProxy */;
+		};
+		C885D95DFF8153047FCF50E1CA07434C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MSWeakTimer;
+			target = 03166DD62238C599BC28CAB59C0E0557 /* MSWeakTimer */;
+			targetProxy = EAA385307B2A8127C346B5752850F1C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7764553E2C8DF6D5A4E8CEBE7F2EDFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 570E7D0E88173CB3015850543267B2EF /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		94FB22F35C42CED8BC7987E0B655B49A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D309D35B66FB668E063AE0ADCE251CD /* Pods-CQCountDownButton.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE20F91DC95E3A559EB3EF7BF198F205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7614E92BDC5F9061BF4CF4290175BB8D /* MSWeakTimer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSWeakTimer/MSWeakTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BB0EF7C9B09AB56ECC755FFFDF469BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 570E7D0E88173CB3015850543267B2EF /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC4ABB0E9DCB18E70D650EA738F36774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7614E92BDC5F9061BF4CF4290175BB8D /* MSWeakTimer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSWeakTimer/MSWeakTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F2F9D8BC41C467231CFD9A77D5BA44AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984198990DC62FB418882AFDB471F23B /* Pods-CQCountDownButton.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ADD3273A58B5B25072CE4BE9C8AC90E /* Build configuration list for PBXNativeTarget "Pods-CQCountDownButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F9D8BC41C467231CFD9A77D5BA44AC /* Debug */,
+				94FB22F35C42CED8BC7987E0B655B49A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDE16D2F4CE39E3A5791A32B8028D9E9 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB0EF7C9B09AB56ECC755FFFDF469BC6 /* Debug */,
+				7764553E2C8DF6D5A4E8CEBE7F2EDFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C86299C3B766E2AA9615377A047E6BBC /* Build configuration list for PBXNativeTarget "MSWeakTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4ABB0E9DCB18E70D650EA738F36774 /* Debug */,
+				AE20F91DC95E3A559EB3EF7BF198F205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
