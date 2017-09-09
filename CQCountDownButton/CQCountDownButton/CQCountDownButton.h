@@ -14,9 +14,10 @@
 
 /**
  构造方法
-
+ 
  @param frame frame
  @param duration 倒计时时间
+ @param buttonClicked 按钮点击事件的回调
  @param countDownStart 倒计时开始时的回调
  @param countDownUnderway 倒计时进行中的回调（每秒一次）
  @param countDownCompletion 倒计时完成时的回调
@@ -24,6 +25,7 @@
  */
 - (instancetype)initWithFrame:(CGRect)frame
                      duration:(NSInteger)duration
+                buttonClicked:(void(^)())buttonClicked
                countDownStart:(void(^)())countDownStart
             countDownUnderway:(void(^)(NSInteger restCountDownNum))countDownUnderway
           countDownCompletion:(void(^)())countDownCompletion;

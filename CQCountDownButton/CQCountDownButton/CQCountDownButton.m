@@ -11,6 +11,7 @@
 #import "CQCountDownButton.h"
 #import <MSWeakTimer.h>
 
+typedef void(^ButtonClickedBlock)();
 typedef void(^CountDownStartBlock)();
 typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
 typedef void(^CountDownCompletionBlock)();
@@ -19,6 +20,8 @@ typedef void(^CountDownCompletionBlock)();
 
 /** 控制倒计时的timer */
 @property (nonatomic, strong) MSWeakTimer *timer;
+/** 按钮点击事件的回调 */
+@property (nonatomic, copy) ButtonClickedBlock buttonClickedBlock;
 /** 倒计时开始时的回调 */
 @property (nonatomic, copy) CountDownStartBlock countDownStartBlock;
 /** 倒计时进行中的回调（每秒一次） */
@@ -40,6 +43,7 @@ typedef void(^CountDownCompletionBlock)();
  
  @param frame frame
  @param duration 倒计时时间
+ @param buttonClicked 按钮点击事件的回调
  @param countDownStart 倒计时开始时的回调
  @param countDownUnderway 倒计时进行中的回调（每秒一次）
  @param countDownCompletion 倒计时完成时的回调
@@ -47,16 +51,25 @@ typedef void(^CountDownCompletionBlock)();
  */
 - (instancetype)initWithFrame:(CGRect)frame
                      duration:(NSInteger)duration
+                buttonClicked:(void(^)())buttonClicked
                countDownStart:(void(^)())countDownStart
             countDownUnderway:(void(^)(NSInteger restCountDownNum))countDownUnderway
           countDownCompletion:(void(^)())countDownCompletion {
     if (self = [super initWithFrame:frame]) {
         _startCountDownNum = duration;
+        self.buttonClickedBlock       = buttonClicked;
         self.countDownStartBlock      = countDownStart;
         self.countDownUnderwayBlock   = countDownUnderway;
         self.countDownCompletionBlock = countDownCompletion;
+        [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+/** 按钮点击 */
+- (void)buttonClicked:(CQCountDownButton *)sender {
+    sender.enabled = NO;
+    self.buttonClickedBlock();
 }
 
 /** 开始倒计时 */
@@ -79,6 +92,7 @@ typedef void(^CountDownCompletionBlock)();
         self.timer = nil;
         _restCountDownNum = _startCountDownNum;
         self.countDownCompletionBlock(); // 调用倒计时完成的回调
+        self.enabled = YES;
     }
 }
 
