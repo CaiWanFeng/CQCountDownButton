@@ -96,9 +96,4 @@ typedef void(^CountDownCompletionBlock)();
     }
 }
 
-- (void)dealloc {
-    [_timer invalidate];
-    _timer = nil;
-}
-
 @end
