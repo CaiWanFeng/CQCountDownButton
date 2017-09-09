@@ -12,6 +12,8 @@
 
 @interface SecondViewController ()
 
+@property (nonatomic, strong) CQCountDownButton *countDownButton;
+
 @end
 
 @implementation SecondViewController
@@ -20,7 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    __block CQCountDownButton *countDownButton = [[CQCountDownButton alloc] initWithFrame:CGRectMake(90, 90, 150, 30) duration:10 buttonClicked:^{
+    __weak __typeof__(self) weakSelf = self;
+    
+    self.countDownButton = [[CQCountDownButton alloc] initWithFrame:CGRectMake(90, 90, 150, 30) duration:10 buttonClicked:^{
         //------- 按钮点击 -------//
         [SVProgressHUD showWithStatus:@"正在获取验证码..."];
         // 请求数据
@@ -30,11 +34,11 @@
                 // 获取成功
                 [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
                 // 获取到验证码后开始倒计时
-                [countDownButton startCountDown];
+                [weakSelf.countDownButton startCountDown];
             } else {
                 // 获取失败
                 [SVProgressHUD showErrorWithStatus:@"获取失败，请重试"];
-                countDownButton.enabled = YES;
+                weakSelf.countDownButton.enabled = YES;
             }
         });
     } countDownStart:^{
@@ -42,18 +46,19 @@
         NSLog(@"倒计时开始");
     } countDownUnderway:^(NSInteger restCountDownNum) {
         //------- 倒计时进行中 -------//
-        [countDownButton setTitle:[NSString stringWithFormat:@"再次获取(%ld秒)", restCountDownNum] forState:UIControlStateNormal];
+        [weakSelf.countDownButton setTitle:[NSString stringWithFormat:@"再次获取(%ld秒)", restCountDownNum] forState:UIControlStateNormal];
     } countDownCompletion:^{
         //------- 倒计时结束 -------//
-        [countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
+        [weakSelf.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
         NSLog(@"倒计时结束");
     }];
     
-    [self.view addSubview:countDownButton];
-    [countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
-    [countDownButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    [self.view addSubview:self.countDownButton];
+    [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
+    [self.countDownButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 }
+
 
 - (void)dealloc {
     [SVProgressHUD showSuccessWithStatus:@"页面2已释放"];
