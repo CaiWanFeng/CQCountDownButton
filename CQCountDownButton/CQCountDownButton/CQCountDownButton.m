@@ -96,4 +96,8 @@ typedef void(^CountDownCompletionBlock)();
     }
 }
 
+- (void)dealloc {
+    NSLog(@"倒计时按钮已释放");
+}
+
 @end
