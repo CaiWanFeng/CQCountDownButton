@@ -24,7 +24,7 @@
     
     __weak __typeof__(self) weakSelf = self;
     
-    self.countDownButton = [[CQCountDownButton alloc] initWithFrame:CGRectMake(90, 90, 150, 30) duration:10 buttonClicked:^{
+    self.countDownButton = [[CQCountDownButton alloc] initWithDuration:10 buttonClicked:^{
         //------- 按钮点击 -------//
         [SVProgressHUD showWithStatus:@"正在获取验证码..."];
         // 请求数据
@@ -54,6 +54,7 @@
     }];
     
     [self.view addSubview:self.countDownButton];
+    self.countDownButton.frame = CGRectMake(90, 90, 200, 30);
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
