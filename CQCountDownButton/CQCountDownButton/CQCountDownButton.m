@@ -77,7 +77,7 @@ typedef void(^CountDownCompletionBlock)();
         self.timer = nil;
     }
     _restCountDownNum = _startCountDownNum;
-    self.countDownStartBlock(); // 调用倒计时开始的block
+    !self.countDownStartBlock ?: self.countDownStartBlock(); // 调用倒计时开始的block
     self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshButton) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
 }
 
@@ -89,7 +89,7 @@ typedef void(^CountDownCompletionBlock)();
         [self.timer invalidate];
         self.timer = nil;
         _restCountDownNum = _startCountDownNum;
-        self.countDownCompletionBlock(); // 调用倒计时完成的回调
+        !self.countDownCompletionBlock ?: self.countDownCompletionBlock(); // 调用倒计时完成的回调
         self.enabled = YES;
     }
 }
@@ -101,7 +101,7 @@ typedef void(^CountDownCompletionBlock)();
         self.timer = nil;
     }
     self.enabled = YES;
-    self.countDownCompletionBlock();
+    !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
 }
 
 - (void)dealloc {
