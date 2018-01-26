@@ -94,6 +94,16 @@ typedef void(^CountDownCompletionBlock)();
     }
 }
 
+/** 结束倒计时 */
+- (void)endCountDown {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    self.enabled = YES;
+    self.countDownCompletionBlock();
+}
+
 - (void)dealloc {
     NSLog(@"倒计时按钮已释放");
 }
