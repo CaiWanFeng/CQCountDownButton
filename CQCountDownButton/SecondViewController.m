@@ -22,9 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.title = @"第二页";
+    
     __weak __typeof__(self) weakSelf = self;
     
     self.countDownButton = [[CQCountDownButton alloc] initWithDuration:10 buttonClicked:^{
+        NSLog(@"按钮点击");
         //------- 按钮点击 -------//
         [SVProgressHUD showWithStatus:@"正在获取验证码..."];
         // 请求数据
@@ -54,15 +57,15 @@
     }];
     
     [self.view addSubview:self.countDownButton];
-    self.countDownButton.frame = CGRectMake(90, 90, 200, 30);
+    //------- 按钮的属性设置 -------//
+    self.countDownButton.frame = CGRectMake(0, 150, self.view.frame.size.width, 30);
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 }
 
-
 - (void)dealloc {
-    [SVProgressHUD showSuccessWithStatus:@"页面2已释放"];
+    NSLog(@"页面二已释放");
 }
 
 @end
