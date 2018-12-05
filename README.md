@@ -2,12 +2,13 @@
 
 #### 详情：
 
-http://www.jianshu.com/p/34e87194fb83
+- 优雅的倒计时button：http://www.jianshu.com/p/34e87194fb83
+- 用于解决循环引用的block timer：https://www.jianshu.com/p/1a4661e97f7c
 
 #### 用法：
 
 ```objective-c
- __weak __typeof__(self) weakSelf = self;
+ __weak typeof(self) weakSelf = self;
  
  self.countDownButton = [[CQCountDownButton alloc] initWithDuration:10 buttonClicked:^{
      //------- 按钮点击 -------//
