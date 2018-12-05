@@ -83,6 +83,7 @@ typedef void(^CountDownCompletionBlock)();
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf refreshButton];
     }];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 /** 刷新按钮内容 */
