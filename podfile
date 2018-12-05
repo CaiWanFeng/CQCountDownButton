@@ -1,5 +1,4 @@
 platform:ios,'8.0'
 target 'CQCountDownButton' do
-pod 'MSWeakTimer', '~> 1.1.0'
 pod 'SVProgressHUD'
 end

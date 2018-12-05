@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */; };
+		D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */; };
 		D9DB53E91F6241C20009CD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53E81F6241C20009CD6C /* main.m */; };
 		D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EB1F6241C20009CD6C /* AppDelegate.m */; };
 		D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EE1F6241C20009CD6C /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CQCountDownButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.release.xcconfig"; sourceTree = "<group>"; };
+		D956FA8A21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CQBlockSupport.h"; sourceTree = "<group>"; };
+		D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CQBlockSupport.m"; sourceTree = "<group>"; };
 		D9DB53E41F6241C20009CD6C /* CQCountDownButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQCountDownButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DB53E81F6241C20009CD6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D9DB53EA1F6241C20009CD6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 			children = (
 				D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */,
 				D9DB54001F6242320009CD6C /* CQCountDownButton.m */,
+				D956FA8A21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.h */,
+				D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */,
 			);
 			path = CQCountDownButton;
 			sourceTree = "<group>";
@@ -132,7 +137,6 @@
 				D9DB53E01F6241C20009CD6C /* Sources */,
 				D9DB53E11F6241C20009CD6C /* Frameworks */,
 				D9DB53E21F6241C20009CD6C /* Resources */,
-				CCEA0B1C2E3DFF19CE7277E6 /* [CP] Embed Pods Frameworks */,
 				4DCC95B941987B39BF24719F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -155,8 +159,7 @@
 				TargetAttributes = {
 					D9DB53E31F6241C20009CD6C = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4J5JWPJ294;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -198,28 +201,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CCEA0B1C2E3DFF19CE7277E6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC39F6D21F9F70B94D34BA4C /* [CP] Check Pods Manifest.lock */ = {
@@ -228,13 +219,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CQCountDownButton-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -244,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */,
 				D9DB54041F628A480009CD6C /* SecondViewController.m in Sources */,
 				D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */,
 				D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */,
@@ -370,12 +365,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4J5JWPJ294;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -385,12 +382,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4J5JWPJ294;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

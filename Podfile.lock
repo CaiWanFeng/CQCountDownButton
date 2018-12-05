@@ -1,15 +1,16 @@
 PODS:
-  - MSWeakTimer (1.1.0)
-  - SVProgressHUD (2.1.2)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
-  - MSWeakTimer (~> 1.1.0)
   - SVProgressHUD
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SVProgressHUD
+
 SPEC CHECKSUMS:
-  MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: dd6d90e865cc45a322a48b3ace988ca59191fe2e
+PODFILE CHECKSUM: 70840ca2f4c6a7c77c196028a55faae4f9278c29
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

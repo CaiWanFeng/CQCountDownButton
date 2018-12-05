@@ -9,7 +9,7 @@
 //========== 倒计时button ==========//
 
 #import "CQCountDownButton.h"
-#import <MSWeakTimer.h>
+#import "NSTimer+CQBlockSupport.h"
 
 typedef void(^ButtonClickedBlock)();
 typedef void(^CountDownStartBlock)();
@@ -19,7 +19,7 @@ typedef void(^CountDownCompletionBlock)();
 @interface CQCountDownButton ()
 
 /** 控制倒计时的timer */
-@property (nonatomic, strong) MSWeakTimer *timer;
+@property (nonatomic, strong) NSTimer *timer;
 /** 按钮点击事件的回调 */
 @property (nonatomic, copy) ButtonClickedBlock buttonClickedBlock;
 /** 倒计时开始时的回调 */
@@ -78,7 +78,11 @@ typedef void(^CountDownCompletionBlock)();
     }
     _restCountDownNum = _startCountDownNum;
     !self.countDownStartBlock ?: self.countDownStartBlock(); // 调用倒计时开始的block
-    self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshButton) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
+    __weak typeof(self) weakSelf = self;
+    self.timer = [NSTimer cq_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
+        __strong typeof(self) strongSelf = weakSelf;
+        [strongSelf refreshButton];
+    }];
 }
 
 /** 刷新按钮内容 */

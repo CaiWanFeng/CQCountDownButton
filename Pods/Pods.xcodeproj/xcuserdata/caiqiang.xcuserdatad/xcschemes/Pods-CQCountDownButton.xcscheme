@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8315B468E59AD94E8068924E6E0A0272'
-               BlueprintName = 'Pods-CQCountDownButton'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-CQCountDownButton.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29093DE34FA0BD52580D70F1694AF4AB"
+               BlueprintName = "Pods-CQCountDownButton"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libPods-CQCountDownButton.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
