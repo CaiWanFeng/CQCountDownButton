@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "CQXibViewController.h"
 #import <SVProgressHUD.h>
 
 @interface ViewController ()
@@ -28,13 +29,24 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:button];
     button.frame = CGRectMake(0, 150, self.view.frame.size.width, 40);
-    [button setTitle:@"跳转到倒计时页面" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"纯代码测试" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(gotoSecondVC) forControlEvents:UIControlEventTouchDown];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.view addSubview:button2];
+    button2.frame = CGRectMake(0, 200, self.view.frame.size.width, 40);
+    [button2 setTitle:@"xib测试" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(gotoXibVC) forControlEvents:UIControlEventTouchDown];
 }
 
-- (void)buttonClicked {
+- (void)gotoSecondVC {
     SecondViewController *secondVC = [[SecondViewController alloc] init];
     [self.navigationController pushViewController:secondVC animated:YES];
+}
+
+- (void)gotoXibVC {
+    CQXibViewController *xibVC = [[CQXibViewController alloc] init];
+    [self.navigationController pushViewController:xibVC animated:YES];
 }
 
 @end

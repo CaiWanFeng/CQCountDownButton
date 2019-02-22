@@ -11,11 +11,6 @@
 #import "CQCountDownButton.h"
 #import "NSTimer+CQBlockSupport.h"
 
-typedef void(^ButtonClickedBlock)();
-typedef void(^CountDownStartBlock)();
-typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
-typedef void(^CountDownCompletionBlock)();
-
 @interface CQCountDownButton ()
 
 /** 控制倒计时的timer */
@@ -54,15 +49,27 @@ typedef void(^CountDownCompletionBlock)();
             countDownUnderway:(void(^)(NSInteger restCountDownNum))countDownUnderway
           countDownCompletion:(void(^)())countDownCompletion {
     if (self = [super init]) {
-        _startCountDownNum = duration;
-        self.buttonClickedBlock       = buttonClicked;
-        self.countDownStartBlock      = countDownStart;
-        self.countDownUnderwayBlock   = countDownUnderway;
-        self.countDownCompletionBlock = countDownCompletion;
+        [self configDuration:duration buttonClickedBlock:buttonClicked countDownStartBlock:countDownStart countDownUnderwayBlock:countDownUnderway countDownCompletionBlock:countDownCompletion];
         [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
+}
+
+- (void)configDuration:(NSInteger)duration buttonClickedBlock:(ButtonClickedBlock)buttonClickedBlock countDownStartBlock:(CountDownStartBlock)countDownStartBlock countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock {
+    _startCountDownNum = duration;
+    self.buttonClickedBlock       = buttonClickedBlock;
+    self.countDownStartBlock      = countDownStartBlock;
+    self.countDownUnderwayBlock   = countDownUnderwayBlock;
+    self.countDownCompletionBlock = countDownCompletionBlock;
+}
+
 
 /** 按钮点击 */
 - (void)buttonClicked:(CQCountDownButton *)sender {
@@ -89,12 +96,14 @@ typedef void(^CountDownCompletionBlock)();
 /** 刷新按钮内容 */
 - (void)refreshButton {
     _restCountDownNum --;
-    self.countDownUnderwayBlock(_restCountDownNum); // 调用倒计时进行中的回调
-    if (_restCountDownNum == 0) {
+    // 调用倒计时进行中的回调
+    !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
+    if (_restCountDownNum == 0) { // 倒计时完成
         [self.timer invalidate];
         self.timer = nil;
         _restCountDownNum = _startCountDownNum;
-        !self.countDownCompletionBlock ?: self.countDownCompletionBlock(); // 调用倒计时完成的回调
+        // 调用倒计时完成的回调
+        !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
         self.enabled = YES;
     }
 }

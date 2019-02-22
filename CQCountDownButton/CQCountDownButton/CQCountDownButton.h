@@ -10,12 +10,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ButtonClickedBlock)();
+typedef void(^CountDownStartBlock)();
+typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
+typedef void(^CountDownCompletionBlock)();
+
 @interface CQCountDownButton : UIButton
 
+/** 开始倒计时 */
+- (void)startCountDown;
+/** 结束倒计时 */
+- (void)endCountDown;
+
+#pragma mark - 如果是纯代码可以直接使用此方法完成所有设置
 /**
  构造方法
  
- @param duration 倒计时时间
+ @param duration 倒计时总时间
  @param buttonClicked 按钮点击事件的回调
  @param countDownStart 倒计时开始时的回调
  @param countDownUnderway 倒计时进行中的回调（每秒一次）
@@ -28,10 +39,16 @@
             countDownUnderway:(void(^)(NSInteger restCountDownNum))countDownUnderway
           countDownCompletion:(void(^)())countDownCompletion;
 
-/** 开始倒计时 */
-- (void)startCountDown;
+#pragma mark - xib或storyboard通过此方法配置回调
+/**
+ xib或storyboard不能调用自定义方法，可以通过此方法配置回调
 
-/** 结束倒计时 */
-- (void)endCountDown;
+ @param duration 倒计时总时间
+ @param buttonClickedBlock 按钮点击事件的回调
+ @param countDownStartBlock 倒计时开始时的回调
+ @param countDownUnderwayBlock 倒计时进行中的回调（每秒一次）
+ @param countDownCompletionBlock 倒计时完成时的回调
+ */
+- (void)configDuration:(NSInteger)duration buttonClickedBlock:(ButtonClickedBlock)buttonClickedBlock countDownStartBlock:(CountDownStartBlock)countDownStartBlock countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock;
 
 @end

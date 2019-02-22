@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.title = @"第二页";
+    self.title = @"纯代码测试";
     
     __weak typeof(self) weakSelf = self;
     
