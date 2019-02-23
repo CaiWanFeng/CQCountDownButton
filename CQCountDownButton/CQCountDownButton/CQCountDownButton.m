@@ -33,8 +33,10 @@
     NSInteger _restCountDownNum;
 }
 
+#pragma mark - init
+
 /**
- 构造方法
+ 自定义构造方法，供纯代码玩家使用
  
  @param duration 倒计时时间
  @param buttonClicked 按钮点击事件的回调
@@ -44,10 +46,10 @@
  @return 倒计时button
  */
 - (instancetype)initWithDuration:(NSInteger)duration
-                buttonClicked:(void(^)())buttonClicked
-               countDownStart:(void(^)())countDownStart
-            countDownUnderway:(void(^)(NSInteger restCountDownNum))countDownUnderway
-          countDownCompletion:(void(^)())countDownCompletion {
+                buttonClicked:(ButtonClickedBlock)buttonClicked
+               countDownStart:(CountDownStartBlock)countDownStart
+            countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
+          countDownCompletion:(CountDownCompletionBlock)countDownCompletion {
     if (self = [super init]) {
         [self configDuration:duration buttonClickedBlock:buttonClicked countDownStartBlock:countDownStart countDownUnderwayBlock:countDownUnderway countDownCompletionBlock:countDownCompletion];
         [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -55,12 +57,21 @@
     return self;
 }
 
+// xib和storyboard会调用此构造方法
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
+
+#pragma mark - dealloc
+
+- (void)dealloc {
+    NSLog(@"倒计时按钮已释放");
+}
+
+#pragma mark - 配置属性和回调
 
 - (void)configDuration:(NSInteger)duration buttonClickedBlock:(ButtonClickedBlock)buttonClickedBlock countDownStartBlock:(CountDownStartBlock)countDownStartBlock countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock {
     _startCountDownNum = duration;
@@ -88,24 +99,26 @@
     __weak typeof(self) weakSelf = self;
     self.timer = [NSTimer cq_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
         __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf refreshButton];
+        [strongSelf handleCountDown];
     }];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
-/** 刷新按钮内容 */
-- (void)refreshButton {
-    _restCountDownNum --;
+- (void)handleCountDown {
     // 调用倒计时进行中的回调
     !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
     if (_restCountDownNum == 0) { // 倒计时完成
+        // 将timer置为nil
         [self.timer invalidate];
         self.timer = nil;
+        // 重置剩余倒计时
         _restCountDownNum = _startCountDownNum;
         // 调用倒计时完成的回调
         !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
+        // 恢复按钮的enabled状态
         self.enabled = YES;
     }
+    _restCountDownNum --;
 }
 
 /** 结束倒计时 */
@@ -116,10 +129,6 @@
     }
     self.enabled = YES;
     !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
-}
-
-- (void)dealloc {
-    NSLog(@"倒计时按钮已释放");
 }
 
 @end
