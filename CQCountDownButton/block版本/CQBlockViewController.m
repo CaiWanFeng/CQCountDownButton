@@ -31,14 +31,14 @@
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     
     __weak typeof(self) weakSelf = self;
-    [self.countDownButton configDuration:10 buttonClickedBlock:^{
+    [self.countDownButton configDuration:10 buttonClicked:^{
         [weakSelf.countDownButton startCountDown];
-    } countDownStartBlock:^{
+    } countDownStart:^{
         NSLog(@"倒计时开始");
-    } countDownUnderwayBlock:^(NSInteger restCountDownNum) {
+    } countDownUnderway:^(NSInteger restCountDownNum) {
         NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
         [weakSelf.countDownButton setTitle:title forState:UIControlStateNormal];
-    } countDownCompletionBlock:^{
+    } countDownCompletion:^{
         [weakSelf.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
         NSLog(@"倒计时结束");
     }];

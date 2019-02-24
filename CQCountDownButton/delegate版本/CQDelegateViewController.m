@@ -24,13 +24,13 @@
     
     self.title = @"delegate版本";
     
-    self.countDownButton = [[CQCountDownButton alloc] initWithFrame:CGRectMake(100, 100, 200, 40)];
+    self.countDownButton = [[CQCountDownButton alloc] initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 60)];
     [self.view addSubview:self.countDownButton];
-    self.countDownButton.dataSource = self;
-    self.countDownButton.delegate = self;
     [self.countDownButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
+    self.countDownButton.dataSource = self;
+    self.countDownButton.delegate = self;
 }
 
 - (void)dealloc {
@@ -38,13 +38,13 @@
 }
 
 // 设置起始倒计时秒数
-- (NSInteger)startCountdownNumOfCountdownButton:(CQCountDownButton *)countdownButton {
+- (NSInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton {
     return 10;
 }
 
 
 // 倒计时按钮点击时回调
-- (void)countdownButtonDidClick:(CQCountDownButton *)countdownButton {
+- (void)countDownButtonDidClick:(CQCountDownButton *)countDownButton {
     //------- 按钮点击 -------//
     [SVProgressHUD showWithStatus:@"正在获取验证码..."];
     // 模拟数据请求
@@ -63,14 +63,19 @@
     });
 }
 
+// 倒计时开始的回调
+- (void)countDownButtonDidStartCountDown:(CQCountDownButton *)countDownButton {
+    NSLog(@"倒计时开始");
+}
+
 // 倒计时进行中的回调
-- (void)countdownButtonDidCountdown:(CQCountDownButton *)countdownButton withRestCountdownNum:(NSInteger)restCountdownNum {
-    NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountdownNum];
+- (void)countDownButtonDidCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum {
+    NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
     [self.countDownButton setTitle:title forState:UIControlStateNormal];
 }
 
 // 倒计时结束时的回调
-- (void)countdownButtonDidEndCountdown:(CQCountDownButton *)countdownButton {
+- (void)countDownButtonDidEndCountDown:(CQCountDownButton *)countDownButton {
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     NSLog(@"倒计时结束");
 }

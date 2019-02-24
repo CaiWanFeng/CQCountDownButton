@@ -28,7 +28,7 @@
     for (int i = 0; i < 3; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         [self.view addSubview:button];
-        button.frame = CGRectMake(0, 100+60*i, self.view.frame.size.width, 50);
+        button.frame = CGRectMake(0, 150+80*i, self.view.frame.size.width, 60);
         switch (i) {
             case 0:
             {

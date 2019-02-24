@@ -17,7 +17,7 @@
 @property (nonatomic, copy) ButtonClickedBlock buttonClickedBlock;
 /** 倒计时开始时的回调 */
 @property (nonatomic, copy) CountDownStartBlock countDownStartBlock;
-/** 倒计时进行中的回调（每秒一次） */
+/** 倒计时进行中的回调 */
 @property (nonatomic, copy) CountDownUnderwayBlock countDownUnderwayBlock;
 /** 倒计时完成时的回调 */
 @property (nonatomic, copy) CountDownCompletionBlock countDownCompletionBlock;
@@ -30,7 +30,7 @@
     /** 剩余倒计时的值 */
     NSInteger _restCountDownNum;
     
-    // 使用block（若使用block则不能再使用delegate）
+    // 使用block（若使用block则不能再使用delegate，反之亦然）
     BOOL _useBlock;
 }
 
@@ -62,24 +62,28 @@
 #pragma mark - block版本
 
 /**
- 配置属性和回调
-
- @param duration 倒计时总时间
- @param buttonClickedBlock 按钮点击回调
- @param countDownStartBlock 倒计时开始回调
- @param countDownUnderwayBlock 倒计时进行中回调
- @param countDownCompletionBlock 倒计时结束回调
+ 所有回调通过block配置
+ 
+ @param duration            倒计时总时间
+ @param buttonClicked       按钮点击的回调
+ @param countDownStart      倒计时开始时的回调
+ @param countDownUnderway   倒计时进行中的回调
+ @param countDownCompletion 倒计时完成时的回调
  */
-- (void)configDuration:(NSInteger)duration buttonClickedBlock:(ButtonClickedBlock)buttonClickedBlock countDownStartBlock:(CountDownStartBlock)countDownStartBlock countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock {
+- (void)configDuration:(NSInteger)duration
+         buttonClicked:(ButtonClickedBlock)buttonClicked
+        countDownStart:(CountDownStartBlock)countDownStart
+     countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
+   countDownCompletion:(CountDownCompletionBlock)countDownCompletion {
     if (_dataSource || _delegate) {
         [self showError];
     }
     _useBlock = YES; // 表示使用block，不能再用delegate
     _startCountDownNum = duration;
-    self.buttonClickedBlock       = buttonClickedBlock;
-    self.countDownStartBlock      = countDownStartBlock;
-    self.countDownUnderwayBlock   = countDownUnderwayBlock;
-    self.countDownCompletionBlock = countDownCompletionBlock;
+    self.buttonClickedBlock       = buttonClicked;
+    self.countDownStartBlock      = countDownStart;
+    self.countDownUnderwayBlock   = countDownUnderway;
+    self.countDownCompletionBlock = countDownCompletion;
 }
 
 #pragma mark - delegate版本
@@ -104,9 +108,9 @@
 - (void)buttonClicked:(CQCountDownButton *)sender {
     sender.enabled = NO;
     !self.buttonClickedBlock ?: self.buttonClickedBlock();
-    if ([_delegate respondsToSelector:@selector(countdownButtonDidClick:)]) {
-        _startCountDownNum = [_dataSource startCountdownNumOfCountdownButton:self];
-        [_delegate countdownButtonDidClick:self];
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidClick:)]) {
+        _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
+        [_delegate countDownButtonDidClick:self];
     }
 }
 
@@ -119,6 +123,9 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时开始的回调
     !self.countDownStartBlock ?: self.countDownStartBlock();
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidStartCountDown:)]) {
+        [_delegate countDownButtonDidStartCountDown:self];
+    }
     __weak typeof(self) weakSelf = self;
     self.timer = [NSTimer cq_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
         __strong typeof(self) strongSelf = weakSelf;
@@ -131,8 +138,8 @@
 - (void)handleCountDown {
     // 调用倒计时进行中的回调
     !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
-    if ([_delegate respondsToSelector:@selector(countdownButtonDidCountdown:withRestCountdownNum:)]) {
-        [_delegate countdownButtonDidCountdown:self withRestCountdownNum:_restCountDownNum];
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidCountDown:withRestCountDownNum:)]) {
+        [_delegate countDownButtonDidCountDown:self withRestCountDownNum:_restCountDownNum];
     }
     if (_restCountDownNum == 0) { // 倒计时完成
         [self endCountDown];
@@ -150,8 +157,8 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时结束的回调
     !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
-    if ([_delegate respondsToSelector:@selector(countdownButtonDidEndCountdown:)]) {
-        [_delegate countdownButtonDidEndCountdown:self];
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidEndCountDown:)]) {
+        [_delegate countDownButtonDidEndCountDown:self];
     }
     // 恢复按钮的enabled状态
     self.enabled = YES;
