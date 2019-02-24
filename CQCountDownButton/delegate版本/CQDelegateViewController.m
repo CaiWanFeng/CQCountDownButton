@@ -37,15 +37,17 @@
     NSLog(@"页面已释放");
 }
 
+#pragma mark - CQCountDownButton DataSource
+
 // 设置起始倒计时秒数
 - (NSInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton {
     return 10;
 }
 
+#pragma mark - CQCountDownButton Delegate
 
 // 倒计时按钮点击时回调
 - (void)countDownButtonDidClick:(CQCountDownButton *)countDownButton {
-    //------- 按钮点击 -------//
     [SVProgressHUD showWithStatus:@"正在获取验证码..."];
     // 模拟数据请求
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -79,6 +81,5 @@
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     NSLog(@"倒计时结束");
 }
-
 
 @end

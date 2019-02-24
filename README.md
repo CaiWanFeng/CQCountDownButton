@@ -17,14 +17,19 @@
 
 ```objective-c
 __weak typeof(self) weakSelf = self;
-[self.countDownButton configDuration:10 buttonClickedBlock:^{
+
+[self.countDownButton configDuration:10 buttonClicked:^{
+    //========== 按钮点击 ==========//
     [weakSelf.countDownButton startCountDown];
-} countDownStartBlock:^{
+} countDownStart:^{
+    //========== 倒计时开始 ==========//
     NSLog(@"倒计时开始");
-} countDownUnderwayBlock:^(NSInteger restCountDownNum) {
+} countDownUnderway:^(NSInteger restCountDownNum) {
+    //========== 倒计时进行中 ==========//
     NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
     [weakSelf.countDownButton setTitle:title forState:UIControlStateNormal];
-} countDownCompletionBlock:^{
+} countDownCompletion:^{
+    //========== 倒计时结束 ==========//
     [weakSelf.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     NSLog(@"倒计时结束");
 }];
@@ -36,16 +41,17 @@ __weak typeof(self) weakSelf = self;
 self.countDownButton.dataSource = self;
 self.countDownButton.delegate = self;
 
-#pragma mark - CQCountDownButton DataSource && Delegate
+#pragma mark - CQCountDownButton DataSource
 
-// 设置倒计时秒数
-- (NSInteger)startCountdownNumOfCountdownButton:(CQCountDownButton *)countdownButton {
+// 设置倒计时总时间
+- (NSInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton {
     return 10;
 }
 
+#pragma mark - CQCountDownButton Delegate
+
 // 倒计时按钮点击时回调
-- (void)countdownButtonDidClick:(CQCountDownButton *)countdownButton {
-    //------- 按钮点击 -------//
+- (void)countDownButtonDidClick:(CQCountDownButton *)countDownButton {
     [SVProgressHUD showWithStatus:@"正在获取验证码..."];
     // 模拟数据请求
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -68,14 +74,14 @@ self.countDownButton.delegate = self;
     NSLog(@"倒计时开始");
 }
 
-// 倒计时进行中回调
-- (void)countdownButtonDidCountdown:(CQCountDownButton *)countdownButton withRestCountdownNum:(NSInteger)restCountdownNum {
-    NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountdownNum];
+// 倒计时进行中的回调
+- (void)countDownButtonDidCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum {
+    NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
     [self.countDownButton setTitle:title forState:UIControlStateNormal];
 }
 
-// 倒计时结束时回调
-- (void)countdownButtonDidEndCountdown:(CQCountDownButton *)countdownButton {
+// 倒计时结束时的回调
+- (void)countDownButtonDidEndCountDown:(CQCountDownButton *)countDownButton {
     [self.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
     NSLog(@"倒计时结束");
 }

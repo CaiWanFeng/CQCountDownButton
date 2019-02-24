@@ -32,13 +32,17 @@
     
     __weak typeof(self) weakSelf = self;
     [self.countDownButton configDuration:10 buttonClicked:^{
+        //========== 按钮点击 ==========//
         [weakSelf.countDownButton startCountDown];
     } countDownStart:^{
+        //========== 倒计时开始 ==========//
         NSLog(@"倒计时开始");
     } countDownUnderway:^(NSInteger restCountDownNum) {
+        //========== 倒计时进行中 ==========//
         NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
         [weakSelf.countDownButton setTitle:title forState:UIControlStateNormal];
     } countDownCompletion:^{
+        //========== 倒计时结束 ==========//
         [weakSelf.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
         NSLog(@"倒计时结束");
     }];
