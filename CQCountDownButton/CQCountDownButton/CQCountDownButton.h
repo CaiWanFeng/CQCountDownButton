@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 // 按钮被点击时回调的block
-typedef void(^ButtonClickedBlock)();
+typedef void(^ButtonClickedBlock)(void);
 // 倒计时开始时回调的block
-typedef void(^CountDownStartBlock)();
+typedef void(^CountDownStartBlock)(void);
 // 倒计时进行中回调的block
 typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
 // 倒计时结束时回调的block
-typedef void(^CountDownCompletionBlock)();
+typedef void(^CountDownCompletionBlock)(void);
 
 @class CQCountDownButton;
 
