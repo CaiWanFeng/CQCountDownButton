@@ -2,7 +2,7 @@
 //  CQCountDownButton.h
 //  CQCountDownButton
 //
-//  Created by 蔡强 on 2017/9/8.
+//  Created by CaiQiang on 2017/9/8.
 //  Copyright © 2017年 kuaijiankang. All rights reserved.
 //
 
@@ -19,13 +19,33 @@ typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
 // 倒计时结束时回调的block
 typedef void(^CountDownCompletionBlock)();
 
+@class CQCountDownButton;
+
+@protocol CQCountDownButtonDataSource <NSObject>
+
+// 设置起始倒计时秒数
+- (NSInteger)startCountdownNumOfCountdownButton:(CQCountDownButton *)countdownButton;
+
+@end
+
+@protocol CQCountDownButtonDelegate <NSObject>
+
+// 倒计时按钮点击时回调
+- (void)countdownButtonDidClick:(CQCountDownButton *)countdownButton;
+// 倒计时进行中的回调
+- (void)countdownButtonDidCountdown:(CQCountDownButton *)countdownButton withRestCountdownNum:(NSInteger)restCountdownNum;
+// 倒计时结束时的回调
+- (void)countdownButtonDidEndCountdown:(CQCountDownButton *)countdownButton;
+
+@end
+
 @interface CQCountDownButton : UIButton
 
 #pragma mark - 开始/结束 倒计时
 
 /** 开始倒计时 */
 - (void)startCountDown;
-/** 结束倒计时 */
+/** 结束倒计时（按钮倒计时结束时会自动调用此方法，一般不需要主动调用） */
 - (void)endCountDown;
 
 #pragma mark - 如果是纯代码可以直接使用此方法完成所有设置
@@ -45,7 +65,7 @@ typedef void(^CountDownCompletionBlock)();
                countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
              countDownCompletion:(CountDownCompletionBlock)countDownCompletion;
 
-#pragma mark - xib或storyboard通过此方法配置回调
+#pragma mark - xib和storyboard通过此方法配置回调
 /**
  xib或storyboard不能调用自定义方法，可以通过此方法配置回调
  
@@ -60,5 +80,10 @@ typedef void(^CountDownCompletionBlock)();
    countDownStartBlock:(CountDownStartBlock)countDownStartBlock
 countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock
 countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock;
+
+#pragma mark - 代理版本
+
+@property (nonatomic, weak) id <CQCountDownButtonDataSource> dataSource;
+@property (nonatomic, weak) id <CQCountDownButtonDelegate> delegate;
 
 @end

@@ -1,13 +1,19 @@
-### 通用倒计时button
+## 实用又好用的倒计时button
 
-#### 详情：
+### 详情：
 
 - 优雅的倒计时button：http://www.jianshu.com/p/34e87194fb83
+- 清晰的倒计时button：https://www.jianshu.com/p/e2ff2260d9a3
 - 用于解决循环引用的block timer：https://www.jianshu.com/p/1a4661e97f7c
 
-#### 用法：
+### 功能
 
-##### 纯代码版本
+- 支持纯代码frame布局与自动布局，也支持xib和storyboard
+- 提供两种回调方式：block和delegate（block让代码更集中，delegate让代码更加层次分明）
+
+### 用法：
+
+#### 1.纯代码版本
 
 ```objective-c
  __weak typeof(self) weakSelf = self;
@@ -48,9 +54,7 @@
  [self.countDownButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 ```
 
-
-
-##### xib或storyboard版本
+#### 2.xib或storyboard版本
 
 ```objective-c
 @interface CQXibViewController ()
@@ -89,5 +93,5 @@
 }
 ```
 
-
+#### 3.delegate版本
 

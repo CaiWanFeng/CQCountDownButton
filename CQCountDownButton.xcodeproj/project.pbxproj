@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */; };
 		D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */; };
+		D9756ABB22211EFF0090510E /* DelegateButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9756ABA22211EFF0090510E /* DelegateButtonViewController.m */; };
 		D993F484221FDD88009D9E0C /* CQXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D993F482221FDD88009D9E0C /* CQXibViewController.m */; };
 		D993F485221FDD88009D9E0C /* CQXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993F483221FDD88009D9E0C /* CQXibViewController.xib */; };
 		D9DB53E91F6241C20009CD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53E81F6241C20009CD6C /* main.m */; };
@@ -26,6 +27,8 @@
 		97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.release.xcconfig"; sourceTree = "<group>"; };
 		D956FA8A21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CQBlockSupport.h"; sourceTree = "<group>"; };
 		D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CQBlockSupport.m"; sourceTree = "<group>"; };
+		D9756AB922211EFF0090510E /* DelegateButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelegateButtonViewController.h; sourceTree = "<group>"; };
+		D9756ABA22211EFF0090510E /* DelegateButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelegateButtonViewController.m; sourceTree = "<group>"; };
 		D993F481221FDD88009D9E0C /* CQXibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQXibViewController.h; sourceTree = "<group>"; };
 		D993F482221FDD88009D9E0C /* CQXibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQXibViewController.m; sourceTree = "<group>"; };
 		D993F483221FDD88009D9E0C /* CQXibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CQXibViewController.xib; sourceTree = "<group>"; };
@@ -75,6 +78,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D9756ABC222258690090510E /* 纯代码block版本 */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB54021F628A480009CD6C /* SecondViewController.h */,
+				D9DB54031F628A480009CD6C /* SecondViewController.m */,
+			);
+			path = "纯代码block版本";
+			sourceTree = "<group>";
+		};
+		D9756ABD222258830090510E /* xib版本 */ = {
+			isa = PBXGroup;
+			children = (
+				D993F481221FDD88009D9E0C /* CQXibViewController.h */,
+				D993F482221FDD88009D9E0C /* CQXibViewController.m */,
+				D993F483221FDD88009D9E0C /* CQXibViewController.xib */,
+			);
+			path = "xib版本";
+			sourceTree = "<group>";
+		};
+		D9756ABE222258910090510E /* delegate版本 */ = {
+			isa = PBXGroup;
+			children = (
+				D9756AB922211EFF0090510E /* DelegateButtonViewController.h */,
+				D9756ABA22211EFF0090510E /* DelegateButtonViewController.m */,
+			);
+			path = "delegate版本";
+			sourceTree = "<group>";
+		};
 		D9DB53DB1F6241C20009CD6C = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +128,13 @@
 			isa = PBXGroup;
 			children = (
 				D9DB53FE1F6242120009CD6C /* CQCountDownButton */,
-				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
-				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
 				D9DB53ED1F6241C20009CD6C /* ViewController.h */,
 				D9DB53EE1F6241C20009CD6C /* ViewController.m */,
-				D9DB54021F628A480009CD6C /* SecondViewController.h */,
-				D9DB54031F628A480009CD6C /* SecondViewController.m */,
-				D993F481221FDD88009D9E0C /* CQXibViewController.h */,
-				D993F482221FDD88009D9E0C /* CQXibViewController.m */,
-				D993F483221FDD88009D9E0C /* CQXibViewController.xib */,
+				D9756ABC222258690090510E /* 纯代码block版本 */,
+				D9756ABD222258830090510E /* xib版本 */,
+				D9756ABE222258910090510E /* delegate版本 */,
+				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
+				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
 				D9DB53F01F6241C20009CD6C /* Main.storyboard */,
 				D9DB53F31F6241C20009CD6C /* Assets.xcassets */,
 				D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */,
@@ -249,6 +278,7 @@
 			files = (
 				D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */,
 				D9DB54041F628A480009CD6C /* SecondViewController.m in Sources */,
+				D9756ABB22211EFF0090510E /* DelegateButtonViewController.m in Sources */,
 				D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */,
 				D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */,
 				D9DB53E91F6241C20009CD6C /* main.m in Sources */,
