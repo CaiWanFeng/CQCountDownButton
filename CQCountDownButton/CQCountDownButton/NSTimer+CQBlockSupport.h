@@ -3,7 +3,7 @@
 //  CQCountDownButton
 //
 //  Created by caiqiang on 2018/12/5.
-//  Copyright © 2018年 kuaijiankang. All rights reserved.
+//  Copyright © 2018年 caiqiang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -3,7 +3,7 @@
 //  CQCountDownButton
 //
 //  Created by caiqiang on 2019/2/24.
-//  Copyright © 2019年 kuaijiankang. All rights reserved.
+//  Copyright © 2019年 caiqiang. All rights reserved.
 //
 
 #import "CQBlockViewController.h"

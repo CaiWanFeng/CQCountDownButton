@@ -3,10 +3,8 @@
 //  CQCountDownButton
 //
 //  Created by CaiQiang on 2017/9/8.
-//  Copyright © 2017年 kuaijiankang. All rights reserved.
+//  Copyright © 2017年 caiqiang. All rights reserved.
 //
-
-//========== 倒计时button ==========//
 
 #import "CQCountDownButton.h"
 #import "NSTimer+CQBlockSupport.h"
