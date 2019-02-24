@@ -63,6 +63,11 @@ self.countDownButton.delegate = self;
     });
 }
 
+// 倒计时开始的回调
+- (void)countDownButtonDidStartCountDown:(CQCountDownButton *)countDownButton {
+    NSLog(@"倒计时开始");
+}
+
 // 倒计时进行中回调
 - (void)countdownButtonDidCountdown:(CQCountDownButton *)countdownButton withRestCountdownNum:(NSInteger)restCountdownNum {
     NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountdownNum];
