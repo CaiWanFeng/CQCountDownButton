@@ -7,10 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "SecondViewController.h"
-#import "CQXibViewController.h"
-#import "DelegateButtonViewController.h"
 #import <SVProgressHUD.h>
+#import "CQBlockViewController.h"
+#import "CQDelegateViewController.h"
 
 @interface ViewController ()
 
@@ -22,7 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // HUD提示设置为1秒
     [SVProgressHUD setMaximumDismissTimeInterval:1];
     
     self.title = @"contents";
@@ -34,44 +32,29 @@
         switch (i) {
             case 0:
             {
-                [button setTitle:@"纯代码block版本" forState:UIControlStateNormal];
-                [button addTarget:self action:@selector(gotoSecondVC) forControlEvents:UIControlEventTouchDown];
+                [button setTitle:@"block版本" forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(blockVersion) forControlEvents:UIControlEventTouchDown];
             }
                 break;
                 
             case 1:
             {
-                [button setTitle:@"纯代码delegate版本" forState:UIControlStateNormal];
-                [button addTarget:self action:@selector(gotoDelegateVC) forControlEvents:UIControlEventTouchDown];
-            }
-                break;
-                
-            case 2:
-            {
-                [button setTitle:@"xib版本" forState:UIControlStateNormal];
-                [button addTarget:self action:@selector(gotoXibVC) forControlEvents:UIControlEventTouchDown];
+                [button setTitle:@"delegate版本" forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(delegateVersion) forControlEvents:UIControlEventTouchDown];
             }
                 break;
         }
     }
 }
 
-// block版本
-- (void)gotoSecondVC {
-    SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:secondVC animated:YES];
+- (void)blockVersion {
+    CQBlockViewController *blockVC = [[CQBlockViewController alloc] init];
+    [self.navigationController pushViewController:blockVC animated:YES];
 }
 
-// delegate版本
-- (void)gotoDelegateVC {
-    DelegateButtonViewController *vc = [[DelegateButtonViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-// xib版本
-- (void)gotoXibVC {
-    CQXibViewController *xibVC = [[CQXibViewController alloc] init];
-    [self.navigationController pushViewController:xibVC animated:YES];
+- (void)delegateVersion {
+    CQDelegateViewController *delegateVC = [[CQDelegateViewController alloc] init];
+    [self.navigationController pushViewController:delegateVC animated:YES];
 }
 
 @end

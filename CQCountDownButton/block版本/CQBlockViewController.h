@@ -1,13 +1,13 @@
 //
-//  CQXibViewController.h
+//  CQBlockViewController.h
 //  CQCountDownButton
 //
-//  Created by caiqiang on 2019/2/22.
+//  Created by caiqiang on 2019/2/24.
 //  Copyright © 2019年 kuaijiankang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CQXibViewController : UIViewController
+@interface CQBlockViewController : UIViewController
 
 @end

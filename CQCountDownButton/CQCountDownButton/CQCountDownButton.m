@@ -38,28 +38,7 @@
 
 #pragma mark - init
 
-/**
- 自定义构造方法，供纯代码玩家使用
- 
- @param duration 倒计时时间
- @param buttonClicked 按钮点击事件的回调
- @param countDownStart 倒计时开始时的回调
- @param countDownUnderway 倒计时进行中的回调（每秒一次）
- @param countDownCompletion 倒计时完成时的回调
- @return 倒计时button
- */
-- (instancetype)initWithDuration:(NSInteger)duration
-                buttonClicked:(ButtonClickedBlock)buttonClicked
-               countDownStart:(CountDownStartBlock)countDownStart
-            countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
-          countDownCompletion:(CountDownCompletionBlock)countDownCompletion {
-    if (self = [super init]) {
-        [self configDuration:duration buttonClickedBlock:buttonClicked countDownStartBlock:countDownStart countDownUnderwayBlock:countDownUnderway countDownCompletionBlock:countDownCompletion];
-        [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return self;
-}
-
+// 纯代码init和initWithFrame方法调用
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +46,7 @@
     return self;
 }
 
-// xib和storyboard会调用此构造方法
+// xib和storyboard调用
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,12 +56,22 @@
 
 #pragma mark - dealloc
 
+// 检验是否释放
 - (void)dealloc {
     NSLog(@"倒计时按钮已释放");
 }
 
-#pragma mark - 配置属性和回调
+#pragma mark - block版本
 
+/**
+ 配置属性和回调
+
+ @param duration 倒计时总时间
+ @param buttonClickedBlock 按钮点击回调
+ @param countDownStartBlock 倒计时开始回调
+ @param countDownUnderwayBlock 倒计时进行中回调
+ @param countDownCompletionBlock 倒计时结束回调
+ */
 - (void)configDuration:(NSInteger)duration buttonClickedBlock:(ButtonClickedBlock)buttonClickedBlock countDownStartBlock:(CountDownStartBlock)countDownStartBlock countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock {
     if (_dataSource || _delegate) {
         [self showError];
@@ -95,6 +84,23 @@
     self.countDownCompletionBlock = countDownCompletionBlock;
 }
 
+#pragma mark - delegate版本
+
+- (void)setDataSource:(id<CQCountDownButtonDataSource>)dataSource {
+    if (_useBlock) {
+        [self showError];
+    }
+    _dataSource = dataSource;
+}
+
+- (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
+    if (_useBlock) {
+        [self showError];
+    }
+    _delegate = delegate;
+}
+
+#pragma mark - 事件处理
 
 /** 按钮点击 */
 - (void)buttonClicked:(CQCountDownButton *)sender {
@@ -151,22 +157,6 @@
     }
     // 恢复按钮的enabled状态
     self.enabled = YES;
-}
-
-#pragma mark - delegate 版本
-
-- (void)setDataSource:(id<CQCountDownButtonDataSource>)dataSource {
-    if (_useBlock) {
-        [self showError];
-    }
-    _dataSource = dataSource;
-}
-
-- (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
-    if (_useBlock) {
-        [self showError];
-    }
-    _delegate = delegate;
 }
 
 #pragma mark - 提示错误

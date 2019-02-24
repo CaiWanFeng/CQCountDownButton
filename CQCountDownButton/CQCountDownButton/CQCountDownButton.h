@@ -45,29 +45,12 @@ typedef void(^CountDownCompletionBlock)();
 
 /** 开始倒计时 */
 - (void)startCountDown;
-/** 结束倒计时（按钮倒计时结束时会自动调用此方法，一般不需要主动调用） */
+/** 结束倒计时（倒计时结束时会自动调用此方法，一般不需要你主动调用） */
 - (void)endCountDown;
 
-#pragma mark - 如果是纯代码可以直接使用此方法完成所有设置
+#pragma mark - block版本
 /**
- 自定义构造方法，供纯代码玩家使用
- 
- @param duration 倒计时总时间
- @param buttonClicked 按钮点击事件的回调
- @param countDownStart 倒计时开始时的回调
- @param countDownUnderway 倒计时进行中的回调（每秒一次）
- @param countDownCompletion 倒计时完成时的回调
- @return 倒计时button
- */
-- (instancetype)initWithDuration:(NSInteger)duration
-                   buttonClicked:(ButtonClickedBlock)buttonClicked
-                  countDownStart:(CountDownStartBlock)countDownStart
-               countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
-             countDownCompletion:(CountDownCompletionBlock)countDownCompletion;
-
-#pragma mark - xib和storyboard通过此方法配置回调
-/**
- xib或storyboard不能调用自定义方法，可以通过此方法配置回调
+ 所有回调通过block配置
  
  @param duration 倒计时总时间
  @param buttonClickedBlock 按钮点击事件的回调
@@ -81,7 +64,7 @@ typedef void(^CountDownCompletionBlock)();
 countDownUnderwayBlock:(CountDownUnderwayBlock)countDownUnderwayBlock
 countDownCompletionBlock:(CountDownCompletionBlock)countDownCompletionBlock;
 
-#pragma mark - 代理版本
+#pragma mark - delegate版本
 
 @property (nonatomic, weak) id <CQCountDownButtonDataSource> dataSource;
 @property (nonatomic, weak) id <CQCountDownButtonDelegate> delegate;
