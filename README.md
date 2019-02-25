@@ -1,15 +1,16 @@
-## 实用又好用的倒计时button
+## 你或许想不到，一个简单的倒计时按钮还能这样玩。。。
 
 ### 详情：
 
 - 优雅的倒计时button：http://www.jianshu.com/p/34e87194fb83
 - 清晰的倒计时button：https://www.jianshu.com/p/e2ff2260d9a3
 - 用于解决循环引用的block timer：https://www.jianshu.com/p/1a4661e97f7c
+- block与delegate在代码组织上的特点：https://www.jianshu.com/p/4e2182fc3355
 
 ### 功能：
 
-- 支持纯代码frame布局与自动布局，也支持xib和storyboard
-- 提供两种回调方式：block和delegate（block让代码更集中，delegate让代码更加层次分明）
+- 支持纯代码frame布局和自动布局，也支持xib和storyboard
+- 提供block与delegate两种回调方式
 
 ### 用法：
 
