@@ -143,6 +143,7 @@
     }
     if (_restCountDownNum == 0) { // 倒计时完成
         [self endCountDown];
+        return;
     }
     _restCountDownNum --;
 }
