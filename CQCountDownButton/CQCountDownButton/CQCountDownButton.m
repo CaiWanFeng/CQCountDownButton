@@ -132,6 +132,7 @@
         [strongSelf handleCountDown];
     }];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    self.timer.fireDate = [NSDate distantPast];
 }
 
 /** 倒计时进行中 */
