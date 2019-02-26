@@ -404,7 +404,7 @@
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
+				PRODUCT_BUNDLE_IDENTIFIER = caiqiang.cqcountdownbutton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -421,7 +421,7 @@
 				INFOPLIST_FILE = CQCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KuaiJianKang.CQCountDownButton;
+				PRODUCT_BUNDLE_IDENTIFIER = caiqiang.cqcountdownbutton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
