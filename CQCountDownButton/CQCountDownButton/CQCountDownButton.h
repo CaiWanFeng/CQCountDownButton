@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 // 按钮被点击时回调的block
 typedef void(^ButtonClickedBlock)(void);
 // 倒计时开始时回调的block
@@ -71,7 +73,9 @@ typedef void(^CountDownCompletionBlock)(void);
 
 #pragma mark - delegate版本
 
-@property (nonatomic, weak) id <CQCountDownButtonDataSource> dataSource;
-@property (nonatomic, weak) id <CQCountDownButtonDelegate> delegate;
+@property (nonatomic, weak, nullable) id <CQCountDownButtonDataSource> dataSource;
+@property (nonatomic, weak, nullable) id <CQCountDownButtonDelegate> delegate;
 
 @end
+
+NS_ASSUME_NONNULL_END
