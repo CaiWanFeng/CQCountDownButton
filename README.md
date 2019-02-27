@@ -1,20 +1,20 @@
 ## 你或许想不到，一个简单的倒计时按钮还能这样玩。。。
 
-### 详情：
+### 详情
 
 - 优雅的倒计时button：http://www.jianshu.com/p/34e87194fb83
 - 清晰的倒计时button：https://www.jianshu.com/p/e2ff2260d9a3
 - 用于解决循环引用的block timer：https://www.jianshu.com/p/1a4661e97f7c
 - block与delegate在代码组织上的特点：https://www.jianshu.com/p/4e2182fc3355
 
-### 功能：
+### 功能
 
 - 支持纯代码frame布局和自动布局，也支持xib和storyboard
 - 提供block与delegate两种回调方式
 
-### 用法：
+### 用法
 
-#### 1.block版本
+- #### block版本：
 
 ```objective-c
 __weak typeof(self) weakSelf = self;
@@ -36,7 +36,7 @@ __weak typeof(self) weakSelf = self;
 }];
 ```
 
-#### 2.delegate版本
+- #### delegate版本：
 
 ```objective-c
 // 遵循协议
