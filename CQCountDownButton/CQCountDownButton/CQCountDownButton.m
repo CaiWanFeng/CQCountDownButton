@@ -70,7 +70,7 @@
  @param countDownUnderway   倒计时进行中的回调
  @param countDownCompletion 倒计时完成时的回调
  */
-- (void)configDuration:(NSInteger)duration
+- (void)configDuration:(NSUInteger)duration
          buttonClicked:(ButtonClickedBlock)buttonClicked
         countDownStart:(CountDownStartBlock)countDownStart
      countDownUnderway:(CountDownUnderwayBlock)countDownUnderway

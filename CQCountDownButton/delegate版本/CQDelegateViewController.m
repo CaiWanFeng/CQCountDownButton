@@ -40,7 +40,7 @@
 #pragma mark - CQCountDownButton DataSource
 
 // 设置起始倒计时秒数
-- (NSInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton {
+- (NSUInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton {
     return 10;
 }
 

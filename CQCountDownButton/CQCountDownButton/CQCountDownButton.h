@@ -25,7 +25,7 @@ typedef void(^CountDownCompletionBlock)(void);
 
 @required
 // 设置起始倒计时秒数
-- (NSInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton;
+- (NSUInteger)startCountDownNumOfCountDownButton:(CQCountDownButton *)countDownButton;
 
 @end
 
@@ -65,7 +65,7 @@ typedef void(^CountDownCompletionBlock)(void);
  @param countDownUnderway   倒计时进行中的回调
  @param countDownCompletion 倒计时完成时的回调
  */
-- (void)configDuration:(NSInteger)duration
+- (void)configDuration:(NSUInteger)duration
          buttonClicked:(ButtonClickedBlock)buttonClicked
         countDownStart:(CountDownStartBlock)countDownStart
      countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
