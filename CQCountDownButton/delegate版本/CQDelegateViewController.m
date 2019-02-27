@@ -71,7 +71,7 @@
 }
 
 // 倒计时进行中的回调
-- (void)countDownButtonDidCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum {
+- (void)countDownButtonDidInCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum {
     NSString *title = [NSString stringWithFormat:@"%ld秒后重试", restCountDownNum];
     [self.countDownButton setTitle:title forState:UIControlStateNormal];
 }

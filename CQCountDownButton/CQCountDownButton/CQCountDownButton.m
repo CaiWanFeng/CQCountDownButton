@@ -13,14 +13,14 @@
 
 /** 控制倒计时的timer */
 @property (nonatomic, strong) NSTimer *timer;
-/** 按钮点击事件的回调 */
-@property (nonatomic, copy) ButtonClickedBlock buttonClickedBlock;
+/** 倒计时按钮点击回调 */
+@property (nonatomic, copy) dispatch_block_t buttonClickedBlock;
 /** 倒计时开始时的回调 */
-@property (nonatomic, copy) CountDownStartBlock countDownStartBlock;
+@property (nonatomic, copy) dispatch_block_t countDownStartBlock;
 /** 倒计时进行中的回调 */
-@property (nonatomic, copy) CountDownUnderwayBlock countDownUnderwayBlock;
-/** 倒计时完成时的回调 */
-@property (nonatomic, copy) CountDownCompletionBlock countDownCompletionBlock;
+@property (nonatomic, copy) void (^countDownUnderwayBlock)(NSInteger restCountDownNum);
+/** 倒计时结束时的回调 */
+@property (nonatomic, copy) dispatch_block_t countDownCompletionBlock;
 
 @end
 
@@ -39,7 +39,7 @@
 // 纯代码init和initWithFrame方法调用
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self addTarget:self action:@selector(p_buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -47,7 +47,7 @@
 // xib和storyboard调用
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self addTarget:self action:@selector(p_buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -71,14 +71,14 @@
  @param countDownCompletion 倒计时完成时的回调
  */
 - (void)configDuration:(NSUInteger)duration
-         buttonClicked:(ButtonClickedBlock)buttonClicked
-        countDownStart:(CountDownStartBlock)countDownStart
-     countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
-   countDownCompletion:(CountDownCompletionBlock)countDownCompletion {
+         buttonClicked:(dispatch_block_t)buttonClicked
+        countDownStart:(dispatch_block_t)countDownStart
+     countDownUnderway:(void (^)(NSInteger restCountDownNum))countDownUnderway
+   countDownCompletion:(dispatch_block_t)countDownCompletion {
     if (_dataSource || _delegate) {
-        [self showError];
+        [self p_showError];
     }
-    _useBlock = YES; // 表示使用block，不能再用delegate
+    _useBlock = YES;
     _startCountDownNum = duration;
     self.buttonClickedBlock       = buttonClicked;
     self.countDownStartBlock      = countDownStart;
@@ -90,29 +90,21 @@
 
 - (void)setDataSource:(id<CQCountDownButtonDataSource>)dataSource {
     if (_useBlock) {
-        [self showError];
+        [self p_showError];
+        return;
     }
     _dataSource = dataSource;
 }
 
 - (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
     if (_useBlock) {
-        [self showError];
+        [self p_showError];
+        return;
     }
     _delegate = delegate;
 }
 
-#pragma mark - 事件处理
-
-/** 按钮点击 */
-- (void)buttonClicked:(CQCountDownButton *)sender {
-    sender.enabled = NO;
-    !self.buttonClickedBlock ?: self.buttonClickedBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidClick:)]) {
-        _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
-        [_delegate countDownButtonDidClick:self];
-    }
-}
+#pragma mark - 开始/结束 倒计时
 
 /** 开始倒计时 */
 - (void)startCountDown {
@@ -129,24 +121,10 @@
     __weak typeof(self) weakSelf = self;
     self.timer = [NSTimer cq_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
         __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf handleCountDown];
+        [strongSelf p_handleCountDown];
     }];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     self.timer.fireDate = [NSDate distantPast];
-}
-
-/** 倒计时进行中 */
-- (void)handleCountDown {
-    // 调用倒计时进行中的回调
-    !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidCountDown:withRestCountDownNum:)]) {
-        [_delegate countDownButtonDidCountDown:self withRestCountDownNum:_restCountDownNum];
-    }
-    if (_restCountDownNum == 0) { // 倒计时完成
-        [self endCountDown];
-        return;
-    }
-    _restCountDownNum --;
 }
 
 /** 结束倒计时 */
@@ -166,9 +144,35 @@
     self.enabled = YES;
 }
 
+#pragma mark - 事件处理
+
+/** 按钮点击 */
+- (void)p_buttonClicked:(CQCountDownButton *)sender {
+    sender.enabled = NO;
+    !self.buttonClickedBlock ?: self.buttonClickedBlock();
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidClick:)]) {
+        _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
+        [_delegate countDownButtonDidClick:self];
+    }
+}
+
+/** 倒计时进行中 */
+- (void)p_handleCountDown {
+    // 调用倒计时进行中的回调
+    !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
+    if ([_delegate respondsToSelector:@selector(countDownButtonDidInCountDown:withRestCountDownNum:)]) {
+        [_delegate countDownButtonDidInCountDown:self withRestCountDownNum:_restCountDownNum];
+    }
+    if (_restCountDownNum == 0) { // 倒计时完成
+        [self endCountDown];
+        return;
+    }
+    _restCountDownNum --;
+}
+
 #pragma mark - 提示错误
 
-- (void)showError {
+- (void)p_showError {
     NSAssert(nil, @"不能同时使用block和delegate");
 }
 

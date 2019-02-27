@@ -10,15 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// 按钮被点击时回调的block
-typedef void(^ButtonClickedBlock)(void);
-// 倒计时开始时回调的block
-typedef void(^CountDownStartBlock)(void);
-// 倒计时进行中回调的block
-typedef void(^CountDownUnderwayBlock)(NSInteger restCountDownNum);
-// 倒计时结束时回调的block
-typedef void(^CountDownCompletionBlock)(void);
-
 @class CQCountDownButton;
 
 @protocol CQCountDownButtonDataSource <NSObject>
@@ -39,7 +30,7 @@ typedef void(^CountDownCompletionBlock)(void);
 
 @required
 // 倒计时进行中的回调
-- (void)countDownButtonDidCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum;
+- (void)countDownButtonDidInCountDown:(CQCountDownButton *)countDownButton withRestCountDownNum:(NSInteger)restCountDownNum;
 // 倒计时结束时的回调
 - (void)countDownButtonDidEndCountDown:(CQCountDownButton *)countDownButton;
 
@@ -59,17 +50,17 @@ typedef void(^CountDownCompletionBlock)(void);
 /**
  所有回调通过block配置
  
- @param duration            倒计时总时间
- @param buttonClicked       按钮点击的回调
+ @param duration            设置起始倒计时秒数
+ @param buttonClicked       倒计时按钮点击回调
  @param countDownStart      倒计时开始时的回调
  @param countDownUnderway   倒计时进行中的回调
- @param countDownCompletion 倒计时完成时的回调
+ @param countDownCompletion 倒计时结束时的回调
  */
 - (void)configDuration:(NSUInteger)duration
-         buttonClicked:(ButtonClickedBlock)buttonClicked
-        countDownStart:(CountDownStartBlock)countDownStart
-     countDownUnderway:(CountDownUnderwayBlock)countDownUnderway
-   countDownCompletion:(CountDownCompletionBlock)countDownCompletion;
+         buttonClicked:(dispatch_block_t)buttonClicked
+        countDownStart:(dispatch_block_t)countDownStart
+     countDownUnderway:(void (^)(NSInteger restCountDownNum))countDownUnderway
+   countDownCompletion:(dispatch_block_t)countDownCompletion;
 
 #pragma mark - delegate版本
 
