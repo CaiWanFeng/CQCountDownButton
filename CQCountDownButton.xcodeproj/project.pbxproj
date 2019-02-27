@@ -73,22 +73,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D9756ABC222258690090510E /* block版本 */ = {
+		D9756ABC222258690090510E /* block demo */ = {
 			isa = PBXGroup;
 			children = (
 				D9276A952222734300A39C39 /* CQBlockViewController.h */,
 				D9276A962222734300A39C39 /* CQBlockViewController.m */,
 			);
-			path = "block版本";
+			path = "block demo";
 			sourceTree = "<group>";
 		};
-		D9756ABE222258910090510E /* delegate版本 */ = {
+		D9756ABE222258910090510E /* delegate demo */ = {
 			isa = PBXGroup;
 			children = (
 				D9276A98222279C800A39C39 /* CQDelegateViewController.h */,
 				D9276A99222279C800A39C39 /* CQDelegateViewController.m */,
 			);
-			path = "delegate版本";
+			path = "delegate demo";
 			sourceTree = "<group>";
 		};
 		D9DB53DB1F6241C20009CD6C = {
@@ -113,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				D9DB53FE1F6242120009CD6C /* CQCountDownButton */,
-				D9756ABC222258690090510E /* block版本 */,
-				D9756ABE222258910090510E /* delegate版本 */,
+				D9756ABC222258690090510E /* block demo */,
+				D9756ABE222258910090510E /* delegate demo */,
 				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
 				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
 				D9DB53ED1F6241C20009CD6C /* ViewController.h */,
