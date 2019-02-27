@@ -5,6 +5,9 @@
 //  Created by CaiQiang on 2017/9/8.
 //  Copyright © 2017年 caiqiang. All rights reserved.
 //
+//  Repo Detail: https://github.com/CaiWanFeng/CQCountDownButton
+//  About Author: https://www.jianshu.com/u/4212f351f6b5
+//
 
 #import "CQCountDownButton.h"
 #import "NSTimer+CQBlockSupport.h"
@@ -64,11 +67,11 @@
 /**
  所有回调通过block配置
  
- @param duration            倒计时总时间
- @param buttonClicked       按钮点击的回调
+ @param duration            设置起始倒计时秒数
+ @param buttonClicked       倒计时按钮点击回调
  @param countDownStart      倒计时开始时的回调
  @param countDownUnderway   倒计时进行中的回调
- @param countDownCompletion 倒计时完成时的回调
+ @param countDownCompletion 倒计时结束时的回调
  */
 - (void)configDuration:(NSUInteger)duration
          buttonClicked:(dispatch_block_t)buttonClicked
@@ -156,7 +159,7 @@
     }
 }
 
-/** 倒计时进行中 */
+/** 处理倒计时进行中的事件 */
 - (void)p_handleCountDown {
     // 调用倒计时进行中的回调
     !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);

@@ -5,6 +5,9 @@
 //  Created by CaiQiang on 2017/9/8.
 //  Copyright © 2017年 caiqiang. All rights reserved.
 //
+//  Repo Detail: https://github.com/CaiWanFeng/CQCountDownButton
+//  About Author: https://www.jianshu.com/u/4212f351f6b5
+//
 
 #import <UIKit/UIKit.h>
 
