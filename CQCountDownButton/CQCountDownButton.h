@@ -41,13 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQCountDownButton : UIButton
 
-#pragma mark - 开始/结束 倒计时
-
-/** 开始倒计时 */
-- (void)startCountDown;
-/** 结束倒计时（倒计时结束时会自动调用此方法） */
-- (void)endCountDown;
-
 #pragma mark - block版本
 
 /**
@@ -69,6 +62,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id <CQCountDownButtonDataSource> dataSource;
 @property (nonatomic, weak, nullable) id <CQCountDownButtonDelegate> delegate;
+
+#pragma mark - 开始/结束 倒计时
+
+/** 开始倒计时 */
+- (void)startCountDown;
+/** 结束倒计时（倒计时结束时会自动调用此方法） */
+- (void)endCountDown;
 
 @end
 
