@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9276A972222734300A39C39 /* CQBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A962222734300A39C39 /* CQBlockViewController.m */; };
+		D9276A9A222279C800A39C39 /* CQDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A99222279C800A39C39 /* CQDelegateViewController.m */; };
+		D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */; };
+		D9DB53E91F6241C20009CD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53E81F6241C20009CD6C /* main.m */; };
+		D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EB1F6241C20009CD6C /* AppDelegate.m */; };
+		D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB53EE1F6241C20009CD6C /* ViewController.m */; };
+		D9DB53F21F6241C20009CD6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F01F6241C20009CD6C /* Main.storyboard */; };
+		D9DB53F41F6241C20009CD6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F31F6241C20009CD6C /* Assets.xcassets */; };
+		D9DB53F71F6241C20009CD6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */; };
+		D9DB54011F6242320009CD6C /* CQCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DB54001F6242320009CD6C /* CQCountDownButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D9276A952222734300A39C39 /* CQBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQBlockViewController.h; sourceTree = "<group>"; };
+		D9276A962222734300A39C39 /* CQBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockViewController.m; sourceTree = "<group>"; };
+		D9276A98222279C800A39C39 /* CQDelegateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQDelegateViewController.h; sourceTree = "<group>"; };
+		D9276A99222279C800A39C39 /* CQDelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQDelegateViewController.m; sourceTree = "<group>"; };
+		D956FA8A21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CQBlockSupport.h"; sourceTree = "<group>"; };
+		D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CQBlockSupport.m"; sourceTree = "<group>"; };
+		D9DB53E41F6241C20009CD6C /* CQCountDownButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQCountDownButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9DB53E81F6241C20009CD6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D9DB53EA1F6241C20009CD6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D9DB53EB1F6241C20009CD6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D9DB53ED1F6241C20009CD6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D9DB53EE1F6241C20009CD6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9DB53F11F6241C20009CD6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9DB53F31F6241C20009CD6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9DB53F61F6241C20009CD6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D9DB53F81F6241C20009CD6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCountDownButton.h; sourceTree = "<group>"; };
+		D9DB54001F6242320009CD6C /* CQCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCountDownButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9DB53E11F6241C20009CD6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9756ABC222258690090510E /* block demo */ = {
+			isa = PBXGroup;
+			children = (
+				D9276A952222734300A39C39 /* CQBlockViewController.h */,
+				D9276A962222734300A39C39 /* CQBlockViewController.m */,
+			);
+			path = "block demo";
+			sourceTree = "<group>";
+		};
+		D9756ABE222258910090510E /* delegate demo */ = {
+			isa = PBXGroup;
+			children = (
+				D9276A98222279C800A39C39 /* CQDelegateViewController.h */,
+				D9276A99222279C800A39C39 /* CQDelegateViewController.m */,
+			);
+			path = "delegate demo";
+			sourceTree = "<group>";
+		};
+		D9DB53DB1F6241C20009CD6C = {
+			isa = PBXGroup;
+			children = (
+				D9DB53E61F6241C20009CD6C /* CQCountDownButton */,
+				D9DB53E51F6241C20009CD6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9DB53E51F6241C20009CD6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB53E41F6241C20009CD6C /* CQCountDownButton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9DB53E61F6241C20009CD6C /* CQCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB53FE1F6242120009CD6C /* CQCountDownButton */,
+				D9756ABC222258690090510E /* block demo */,
+				D9756ABE222258910090510E /* delegate demo */,
+				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
+				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
+				D9DB53ED1F6241C20009CD6C /* ViewController.h */,
+				D9DB53EE1F6241C20009CD6C /* ViewController.m */,
+				D9DB53F01F6241C20009CD6C /* Main.storyboard */,
+				D9DB53F31F6241C20009CD6C /* Assets.xcassets */,
+				D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */,
+				D9DB53F81F6241C20009CD6C /* Info.plist */,
+				D9DB53E71F6241C20009CD6C /* Supporting Files */,
+			);
+			path = CQCountDownButton;
+			sourceTree = "<group>";
+		};
+		D9DB53E71F6241C20009CD6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB53E81F6241C20009CD6C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9DB53FE1F6242120009CD6C /* CQCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */,
+				D9DB54001F6242320009CD6C /* CQCountDownButton.m */,
+				D956FA8A21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.h */,
+				D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */,
+			);
+			path = CQCountDownButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9DB53E31F6241C20009CD6C /* CQCountDownButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9DB53FB1F6241C20009CD6C /* Build configuration list for PBXNativeTarget "CQCountDownButton" */;
+			buildPhases = (
+				D9DB53E01F6241C20009CD6C /* Sources */,
+				D9DB53E11F6241C20009CD6C /* Frameworks */,
+				D9DB53E21F6241C20009CD6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CQCountDownButton;
+			productName = CQCountDownButton;
+			productReference = D9DB53E41F6241C20009CD6C /* CQCountDownButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9DB53DC1F6241C20009CD6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = kuaijiankang;
+				TargetAttributes = {
+					D9DB53E31F6241C20009CD6C = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = D9DB53DF1F6241C20009CD6C /* Build configuration list for PBXProject "CQCountDownButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9DB53DB1F6241C20009CD6C;
+			productRefGroup = D9DB53E51F6241C20009CD6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9DB53E31F6241C20009CD6C /* CQCountDownButton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9DB53E21F6241C20009CD6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9DB53F71F6241C20009CD6C /* LaunchScreen.storyboard in Resources */,
+				D9DB53F41F6241C20009CD6C /* Assets.xcassets in Resources */,
+				D9DB53F21F6241C20009CD6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9DB53E01F6241C20009CD6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */,
+				D9DB53EF1F6241C20009CD6C /* ViewController.m in Sources */,
+				D9276A9A222279C800A39C39 /* CQDelegateViewController.m in Sources */,
+				D9276A972222734300A39C39 /* CQBlockViewController.m in Sources */,
+				D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */,
+				D9DB53E91F6241C20009CD6C /* main.m in Sources */,
+				D9DB54011F6242320009CD6C /* CQCountDownButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D9DB53F01F6241C20009CD6C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9DB53F11F6241C20009CD6C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D9DB53F51F6241C20009CD6C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9DB53F61F6241C20009CD6C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9DB53F91F6241C20009CD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9DB53FA1F6241C20009CD6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9DB53FC1F6241C20009CD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CQCountDownButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caiqiang.cqcountdownbutton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		D9DB53FD1F6241C20009CD6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CQCountDownButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = caiqiang.cqcountdownbutton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9DB53DF1F6241C20009CD6C /* Build configuration list for PBXProject "CQCountDownButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9DB53F91F6241C20009CD6C /* Debug */,
+				D9DB53FA1F6241C20009CD6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9DB53FB1F6241C20009CD6C /* Build configuration list for PBXNativeTarget "CQCountDownButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9DB53FC1F6241C20009CD6C /* Debug */,
+				D9DB53FD1F6241C20009CD6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9DB53DC1F6241C20009CD6C /* Project object */;
+}
