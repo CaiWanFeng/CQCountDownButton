@@ -8,7 +8,6 @@
 
 #import "CQDelegateViewController.h"
 #import "CQCountDownButton.h"
-#import <SVProgressHUD.h>
 
 @interface CQDelegateViewController () <CQCountDownButtonDataSource, CQCountDownButtonDelegate>
 
@@ -46,26 +45,12 @@
 
 #pragma mark - CQCountDownButton Delegate
 
-// 倒计时按钮点击时回调
+// 倒计时按钮点击回调
 - (void)countDownButtonDidClick:(CQCountDownButton *)countDownButton {
-    [SVProgressHUD showWithStatus:@"正在获取验证码..."];
-    // 模拟数据请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        int a = arc4random() % 2;
-        if (a == 0) {
-            // 获取成功
-            [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
-            // 获取到验证码后开始倒计时
-            [self.countDownButton startCountDown];
-        } else {
-            // 获取失败
-            [SVProgressHUD showErrorWithStatus:@"获取失败，请重试"];
-            [self.countDownButton endCountDown];
-        }
-    });
+    [self.countDownButton startCountDown];
 }
 
-// 倒计时开始的回调
+// 倒计时开始时的回调
 - (void)countDownButtonDidStartCountDown:(CQCountDownButton *)countDownButton {
     NSLog(@"倒计时开始");
 }

@@ -80,6 +80,7 @@
    countDownCompletion:(dispatch_block_t)countDownCompletion {
     if (_dataSource || _delegate) {
         [self p_showError];
+        return;
     }
     _useBlock = YES;
     _startCountDownNum = duration;

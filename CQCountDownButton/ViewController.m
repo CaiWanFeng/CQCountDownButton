@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <SVProgressHUD.h>
 #import "CQBlockViewController.h"
 #import "CQDelegateViewController.h"
 
@@ -20,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    [SVProgressHUD setMaximumDismissTimeInterval:1];
     
     self.title = @"contents";
     

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */; };
 		D9276A972222734300A39C39 /* CQBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A962222734300A39C39 /* CQBlockViewController.m */; };
 		D9276A9A222279C800A39C39 /* CQDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A99222279C800A39C39 /* CQDelegateViewController.m */; };
 		D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */; };
@@ -21,8 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CQCountDownButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.release.xcconfig"; sourceTree = "<group>"; };
 		D9276A952222734300A39C39 /* CQBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQBlockViewController.h; sourceTree = "<group>"; };
 		D9276A962222734300A39C39 /* CQBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockViewController.m; sourceTree = "<group>"; };
 		D9276A98222279C800A39C39 /* CQDelegateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQDelegateViewController.h; sourceTree = "<group>"; };
@@ -41,7 +38,6 @@
 		D9DB53F81F6241C20009CD6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DB53FF1F6242320009CD6C /* CQCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCountDownButton.h; sourceTree = "<group>"; };
 		D9DB54001F6242320009CD6C /* CQCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCountDownButton.m; sourceTree = "<group>"; };
-		FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQCountDownButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,30 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0291A818DAB423D77D3E80C9 /* libPods-CQCountDownButton.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00EE2569099C403A7B8579A9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */,
-				97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		68FF1FA3CBCF3FCBA720BA10 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3F47972340803927FC6EAFD1 /* libPods-CQCountDownButton.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D9756ABC222258690090510E /* block demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +74,6 @@
 			children = (
 				D9DB53E61F6241C20009CD6C /* CQCountDownButton */,
 				D9DB53E51F6241C20009CD6C /* Products */,
-				00EE2569099C403A7B8579A9 /* Pods */,
-				68FF1FA3CBCF3FCBA720BA10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,11 +130,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9DB53FB1F6241C20009CD6C /* Build configuration list for PBXNativeTarget "CQCountDownButton" */;
 			buildPhases = (
-				FC39F6D21F9F70B94D34BA4C /* [CP] Check Pods Manifest.lock */,
 				D9DB53E01F6241C20009CD6C /* Sources */,
 				D9DB53E11F6241C20009CD6C /* Frameworks */,
 				D9DB53E21F6241C20009CD6C /* Resources */,
-				4DCC95B941987B39BF24719F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,45 +188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4DCC95B941987B39BF24719F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQCountDownButton/Pods-CQCountDownButton-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC39F6D21F9F70B94D34BA4C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CQCountDownButton-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9DB53E01F6241C20009CD6C /* Sources */ = {
@@ -399,7 +334,6 @@
 		};
 		D9DB53FC1F6241C20009CD6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE28955EA34E75B889C49C6E /* Pods-CQCountDownButton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -416,7 +350,6 @@
 		};
 		D9DB53FD1F6241C20009CD6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97C7C48EFE078BA3137DBF03 /* Pods-CQCountDownButton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

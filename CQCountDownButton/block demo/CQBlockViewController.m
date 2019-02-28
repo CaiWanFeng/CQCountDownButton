@@ -8,9 +8,8 @@
 
 #import "CQBlockViewController.h"
 #import "CQCountDownButton.h"
-#import <SVProgressHUD.h>
 
-@interface CQBlockViewController () <UITableViewDataSource>
+@interface CQBlockViewController ()
 
 @property (nonatomic, strong) CQCountDownButton *countDownButton;
 
@@ -46,30 +45,10 @@
         [weakSelf.countDownButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
         NSLog(@"倒计时结束");
     }];
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height-200)];
-    [self.view addSubview:tableView];
-    tableView.dataSource = self;
 }
 
 - (void)dealloc {
     NSLog(@"页面已释放");
-}
-
-#pragma mark - UITableView DataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellReuseID = @"cellReuseID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellReuseID];
-    }
-    cell.textLabel.text = @"测试滚动tableView时timer是否停止";
-    return cell;
 }
 
 @end
