@@ -65,9 +65,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 开始/结束 倒计时
 
-/** 开始倒计时 */
+/**
+ 开始倒计时
+ */
 - (void)startCountDown;
-/** 结束倒计时（倒计时结束时会自动调用此方法） */
+
+/**
+ 结束倒计时
+ 倒计时结束时会自动调用此方法
+ 也可以主动调用此方法提前结束倒计时
+ 调用此方法会回调倒计时结束的block和代理方法
+ */
 - (void)endCountDown;
 
 @end
