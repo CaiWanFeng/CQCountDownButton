@@ -38,15 +38,15 @@
     
     // 数据源响应的方法
     struct {
-        BOOL startCountDownNumOfCountDownButton:1;
+        BOOL startCountDownNumOfCountDownButton:TRUE;
     } _dataSourceRespondsTo;
     
     // 代理响应的方法
     struct {
-        BOOL countDownButtonDidClick:1;
-        BOOL countDownButtonDidStartCountDown:1;
-        BOOL countDownButtonDidInCountDown:1;
-        BOOL countDownButtonDidEndCountDown:1;
+        BOOL countDownButtonDidClick:TRUE;
+        BOOL countDownButtonDidStartCountDown:TRUE;
+        BOOL countDownButtonDidInCountDown:TRUE;
+        BOOL countDownButtonDidEndCountDown:TRUE;
     } _delegateRespondsTo;
 }
 
