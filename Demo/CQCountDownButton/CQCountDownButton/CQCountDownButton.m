@@ -35,6 +35,19 @@
     
     // 使用block（若使用block则不能再使用delegate，反之亦然）
     BOOL _useBlock;
+    
+    // 数据源响应的方法
+    struct {
+        BOOL startCountDownNumOfCountDownButton:1;
+    } _dataSourceRespondsTo;
+    
+    // 代理响应的方法
+    struct {
+        BOOL countDownButtonDidClick:1;
+        BOOL countDownButtonDidStartCountDown:1;
+        BOOL countDownButtonDidInCountDown:1;
+        BOOL countDownButtonDidEndCountDown:1;
+    } _delegateRespondsTo;
 }
 
 #pragma mark - init
@@ -97,7 +110,12 @@
         [self p_showError];
         return;
     }
-    _dataSource = dataSource;
+    
+    if (_dataSource != dataSource) {
+        _dataSource = dataSource;
+        // 缓存数据源方法是否可以调用
+        _dataSourceRespondsTo.startCountDownNumOfCountDownButton = [_dataSource respondsToSelector:@selector(startCountDownNumOfCountDownButton:)];
+    }
 }
 
 - (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
@@ -105,7 +123,15 @@
         [self p_showError];
         return;
     }
-    _delegate = delegate;
+    
+    if (_delegate != delegate) {
+        _delegate = delegate;
+        // 缓存代理方法是否可以调用
+        _delegateRespondsTo.countDownButtonDidClick = [_delegate respondsToSelector:@selector(countDownButtonDidClick:)];
+        _delegateRespondsTo.countDownButtonDidStartCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidStartCountDown:)];
+        _delegateRespondsTo.countDownButtonDidInCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidInCountDown:withRestCountDownNum:)];
+        _delegateRespondsTo.countDownButtonDidEndCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidEndCountDown:)];
+    }
 }
 
 #pragma mark - 开始/结束 倒计时
@@ -119,7 +145,7 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时开始的回调
     !self.countDownStartBlock ?: self.countDownStartBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidStartCountDown:)]) {
+    if (_delegateRespondsTo.countDownButtonDidStartCountDown) {
         [_delegate countDownButtonDidStartCountDown:self];
     }
     __weak typeof(self) weakSelf = self;
@@ -141,7 +167,7 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时结束的回调
     !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidEndCountDown:)]) {
+    if (_delegateRespondsTo.countDownButtonDidEndCountDown) {
         [_delegate countDownButtonDidEndCountDown:self];
     }
     // 恢复按钮的enabled状态
@@ -154,7 +180,7 @@
 - (void)p_buttonClicked:(CQCountDownButton *)sender {
     sender.enabled = NO;
     !self.buttonClickedBlock ?: self.buttonClickedBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidClick:)]) {
+    if (_delegateRespondsTo.countDownButtonDidClick && _dataSourceRespondsTo.startCountDownNumOfCountDownButton) {
         _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
         [_delegate countDownButtonDidClick:self];
     }
@@ -164,7 +190,7 @@
 - (void)p_handleCountDown {
     // 调用倒计时进行中的回调
     !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidInCountDown:withRestCountDownNum:)]) {
+    if (_delegateRespondsTo.countDownButtonDidInCountDown) {
         [_delegate countDownButtonDidInCountDown:self withRestCountDownNum:_restCountDownNum];
     }
     if (_restCountDownNum == 0) { // 倒计时完成

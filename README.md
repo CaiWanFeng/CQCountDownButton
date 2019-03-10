@@ -1,11 +1,16 @@
-## 你或许想不到，一个简单的倒计时按钮还能这样玩。。。
+## 感受一下高端玩家手中的倒计时button
 
 ### 详情：
 
 - 优雅的倒计时button：http://www.jianshu.com/p/34e87194fb83
 - 清晰的倒计时button：https://www.jianshu.com/p/e2ff2260d9a3
+
+### 细节：
+
 - 用于解决循环引用的block timer：https://www.jianshu.com/p/1a4661e97f7c
 - block与delegate在代码组织上的特点：https://www.jianshu.com/p/4e2182fc3355
+- 为什么给私有方法加前缀：https://www.jianshu.com/p/99e815ec13bb
+- delegate怎么写：https://stackoverflow.com/questions/626898/how-do-i-create-delegates-in-objective-c
 
 ### 功能：
 
