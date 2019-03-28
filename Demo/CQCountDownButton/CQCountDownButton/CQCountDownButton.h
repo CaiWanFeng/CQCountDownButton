@@ -53,8 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param countDownCompletion 倒计时结束时的回调
  */
 - (void)configDuration:(NSUInteger)duration
-         buttonClicked:(dispatch_block_t)buttonClicked
-        countDownStart:(dispatch_block_t)countDownStart
+         buttonClicked:(nullable dispatch_block_t)buttonClicked
+        countDownStart:(nullable dispatch_block_t)countDownStart
      countDownUnderway:(void (^)(NSInteger restCountDownNum))countDownUnderway
    countDownCompletion:(dispatch_block_t)countDownCompletion;
 

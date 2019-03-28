@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D91D97EB224CC9FD0068115A /* CQQuickStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91D97EA224CC9FD0068115A /* CQQuickStartController.m */; };
 		D9276A972222734300A39C39 /* CQBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A962222734300A39C39 /* CQBlockViewController.m */; };
 		D9276A9A222279C800A39C39 /* CQDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9276A99222279C800A39C39 /* CQDelegateViewController.m */; };
 		D956FA8C21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D956FA8B21B7BFDC00B16B0E /* NSTimer+CQBlockSupport.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D91D97E9224CC9FD0068115A /* CQQuickStartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQQuickStartController.h; sourceTree = "<group>"; };
+		D91D97EA224CC9FD0068115A /* CQQuickStartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQQuickStartController.m; sourceTree = "<group>"; };
 		D9276A952222734300A39C39 /* CQBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQBlockViewController.h; sourceTree = "<group>"; };
 		D9276A962222734300A39C39 /* CQBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockViewController.m; sourceTree = "<group>"; };
 		D9276A98222279C800A39C39 /* CQDelegateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQDelegateViewController.h; sourceTree = "<group>"; };
@@ -51,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D91D97E8224CC9990068115A /* 直接倒计时 */ = {
+			isa = PBXGroup;
+			children = (
+				D91D97E9224CC9FD0068115A /* CQQuickStartController.h */,
+				D91D97EA224CC9FD0068115A /* CQQuickStartController.m */,
+			);
+			path = "直接倒计时";
+			sourceTree = "<group>";
+		};
 		D9756ABC222258690090510E /* block demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 				D9DB53FE1F6242120009CD6C /* CQCountDownButton */,
 				D9756ABC222258690090510E /* block demo */,
 				D9756ABE222258910090510E /* delegate demo */,
+				D91D97E8224CC9990068115A /* 直接倒计时 */,
 				D9DB53EA1F6241C20009CD6C /* AppDelegate.h */,
 				D9DB53EB1F6241C20009CD6C /* AppDelegate.m */,
 				D9DB53ED1F6241C20009CD6C /* ViewController.h */,
@@ -200,6 +213,7 @@
 				D9276A972222734300A39C39 /* CQBlockViewController.m in Sources */,
 				D9DB53EC1F6241C20009CD6C /* AppDelegate.m in Sources */,
 				D9DB53E91F6241C20009CD6C /* main.m in Sources */,
+				D91D97EB224CC9FD0068115A /* CQQuickStartController.m in Sources */,
 				D9DB54011F6242320009CD6C /* CQCountDownButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

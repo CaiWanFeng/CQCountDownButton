@@ -35,6 +35,19 @@
     
     // 使用block（若使用block则不能再使用delegate，反之亦然）
     BOOL _useBlock;
+    
+    // 数据源响应的方法
+    struct {
+        BOOL startCountDownNumOfCountDownButton:TRUE;
+    } _dataSourceRespondsTo;
+    
+    // 代理响应的方法
+    struct {
+        BOOL countDownButtonDidClick:TRUE;
+        BOOL countDownButtonDidStartCountDown:TRUE;
+        BOOL countDownButtonDidInCountDown:TRUE;
+        BOOL countDownButtonDidEndCountDown:TRUE;
+    } _delegateRespondsTo;
 }
 
 #pragma mark - init
@@ -74,8 +87,8 @@
  @param countDownCompletion 倒计时结束时的回调
  */
 - (void)configDuration:(NSUInteger)duration
-         buttonClicked:(dispatch_block_t)buttonClicked
-        countDownStart:(dispatch_block_t)countDownStart
+         buttonClicked:(nullable dispatch_block_t)buttonClicked
+        countDownStart:(nullable dispatch_block_t)countDownStart
      countDownUnderway:(void (^)(NSInteger restCountDownNum))countDownUnderway
    countDownCompletion:(dispatch_block_t)countDownCompletion {
     if (_dataSource || _delegate) {
@@ -97,7 +110,12 @@
         [self p_showError];
         return;
     }
-    _dataSource = dataSource;
+    if (_dataSource != dataSource) {
+        _dataSource = dataSource;
+        // 缓存数据源方法是否可以调用
+        _dataSourceRespondsTo.startCountDownNumOfCountDownButton = [_dataSource respondsToSelector:@selector(startCountDownNumOfCountDownButton:)];
+    }
+    _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
 }
 
 - (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
@@ -105,13 +123,23 @@
         [self p_showError];
         return;
     }
-    _delegate = delegate;
+    
+    if (_delegate != delegate) {
+        _delegate = delegate;
+        // 缓存代理方法是否可以调用
+        _delegateRespondsTo.countDownButtonDidClick = [_delegate respondsToSelector:@selector(countDownButtonDidClick:)];
+        _delegateRespondsTo.countDownButtonDidStartCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidStartCountDown:)];
+        _delegateRespondsTo.countDownButtonDidInCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidInCountDown:withRestCountDownNum:)];
+        _delegateRespondsTo.countDownButtonDidEndCountDown = [_delegate respondsToSelector:@selector(countDownButtonDidEndCountDown:)];
+    }
 }
 
 #pragma mark - 开始/结束 倒计时
 
 /** 开始倒计时 */
 - (void)startCountDown {
+    // 因为可以主动调用此方法开启倒计时，不需要点击按钮，所以此处需要将enabled设为no
+    self.enabled = NO;
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
@@ -119,7 +147,7 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时开始的回调
     !self.countDownStartBlock ?: self.countDownStartBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidStartCountDown:)]) {
+    if (_delegateRespondsTo.countDownButtonDidStartCountDown) {
         [_delegate countDownButtonDidStartCountDown:self];
     }
     __weak typeof(self) weakSelf = self;
@@ -141,7 +169,7 @@
     _restCountDownNum = _startCountDownNum;
     // 倒计时结束的回调
     !self.countDownCompletionBlock ?: self.countDownCompletionBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidEndCountDown:)]) {
+    if (_delegateRespondsTo.countDownButtonDidEndCountDown) {
         [_delegate countDownButtonDidEndCountDown:self];
     }
     // 恢复按钮的enabled状态
@@ -154,8 +182,7 @@
 - (void)p_buttonClicked:(CQCountDownButton *)sender {
     sender.enabled = NO;
     !self.buttonClickedBlock ?: self.buttonClickedBlock();
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidClick:)]) {
-        _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
+    if (_delegateRespondsTo.countDownButtonDidClick) {
         [_delegate countDownButtonDidClick:self];
     }
 }
@@ -164,7 +191,7 @@
 - (void)p_handleCountDown {
     // 调用倒计时进行中的回调
     !self.countDownUnderwayBlock ?: self.countDownUnderwayBlock(_restCountDownNum);
-    if ([_delegate respondsToSelector:@selector(countDownButtonDidInCountDown:withRestCountDownNum:)]) {
+    if (_delegateRespondsTo.countDownButtonDidInCountDown) {
         [_delegate countDownButtonDidInCountDown:self withRestCountDownNum:_restCountDownNum];
     }
     if (_restCountDownNum == 0) { // 倒计时完成

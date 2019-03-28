@@ -87,8 +87,8 @@
  @param countDownCompletion 倒计时结束时的回调
  */
 - (void)configDuration:(NSUInteger)duration
-         buttonClicked:(dispatch_block_t)buttonClicked
-        countDownStart:(dispatch_block_t)countDownStart
+         buttonClicked:(nullable dispatch_block_t)buttonClicked
+        countDownStart:(nullable dispatch_block_t)countDownStart
      countDownUnderway:(void (^)(NSInteger restCountDownNum))countDownUnderway
    countDownCompletion:(dispatch_block_t)countDownCompletion {
     if (_dataSource || _delegate) {
@@ -110,12 +110,12 @@
         [self p_showError];
         return;
     }
-    
     if (_dataSource != dataSource) {
         _dataSource = dataSource;
         // 缓存数据源方法是否可以调用
         _dataSourceRespondsTo.startCountDownNumOfCountDownButton = [_dataSource respondsToSelector:@selector(startCountDownNumOfCountDownButton:)];
     }
+    _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
 }
 
 - (void)setDelegate:(id<CQCountDownButtonDelegate>)delegate {
@@ -138,6 +138,8 @@
 
 /** 开始倒计时 */
 - (void)startCountDown {
+    // 因为可以主动调用此方法开启倒计时，不需要点击按钮，所以此处需要将enabled设为no
+    self.enabled = NO;
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
@@ -180,8 +182,7 @@
 - (void)p_buttonClicked:(CQCountDownButton *)sender {
     sender.enabled = NO;
     !self.buttonClickedBlock ?: self.buttonClickedBlock();
-    if (_delegateRespondsTo.countDownButtonDidClick && _dataSourceRespondsTo.startCountDownNumOfCountDownButton) {
-        _startCountDownNum = [_dataSource startCountDownNumOfCountDownButton:self];
+    if (_delegateRespondsTo.countDownButtonDidClick) {
         [_delegate countDownButtonDidClick:self];
     }
 }

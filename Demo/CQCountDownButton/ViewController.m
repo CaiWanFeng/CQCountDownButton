@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CQBlockViewController.h"
 #import "CQDelegateViewController.h"
+#import "CQQuickStartController.h"
 
 @interface ViewController ()
 
@@ -40,6 +41,13 @@
                 [button addTarget:self action:@selector(delegateVersion) forControlEvents:UIControlEventTouchDown];
             }
                 break;
+                
+            case 2:
+            {
+                [button setTitle:@"直接开始倒计时" forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(quickStart) forControlEvents:UIControlEventTouchDown];
+            }
+                break;
         }
     }
 }
@@ -52,6 +60,11 @@
 - (void)delegateVersion {
     CQDelegateViewController *delegateVC = [[CQDelegateViewController alloc] init];
     [self.navigationController pushViewController:delegateVC animated:YES];
+}
+
+- (void)quickStart {
+    CQQuickStartController *quickStartVC = [[CQQuickStartController alloc] init];
+    [self.navigationController pushViewController:quickStartVC animated:YES];
 }
 
 @end
