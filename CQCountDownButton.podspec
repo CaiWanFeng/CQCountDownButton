@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "CQCountDownButton"
-  spec.version      = "1.0"
+  spec.version      = "1.1"
   spec.summary      = "A simple and easy use countdown button."
 
   spec.description  = <<-DESC
